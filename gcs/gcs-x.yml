@@ -21,13 +21,13 @@ spec:
               kind: Bucket
               spec:
                 forProvider:
-                  location: us-central1 # set default if nothing from XR
+                  location: asia-south1 # set default if nothing from XR
                   storageClass: STANDARD # set default if nothing from XR
                   uniformBucketLevelAccess: true #Always enable uniform bucket level access
                   publicAccessPrevention: "inherited"
                 writeConnectionSecretToRef:
                   name: gcs-bucket-secret
-                  namespace: crossplane-system
+                  namespace: upbound-system
             patches:
               - type: FromCompositeFieldPath
                 fromFieldPath: spec.location

@@ -3,9 +3,9 @@ kind: XGCSBucket
 metadata:
   name: my-new-bucket
 spec:
-  location: US
+  location: asia-south1
   storageClass: STANDARD
   publicAccessPrevention: enforced
   writeConnectionSecretToRef:
     name: gcs-bucket-secret
-    namespace: crossplane-system # Or your desired namespace
+    namespace: upbound-system # Or your desired namespace
