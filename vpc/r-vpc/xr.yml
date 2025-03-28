@@ -1,0 +1,11 @@
+apiVersion: network.example.org/v1alpha1
+kind: VPC
+metadata:
+  name: my-vpc
+spec:
+  compositionRef:
+    name: vpc-gcp
+  name: my-crossplane-vpc
+  description: "first vpc to create using XRD"
+  autocreateSubnetworks: false
+  routingMode: "GLOBAL"
