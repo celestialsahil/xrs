@@ -1,0 +1,12 @@
+apiVersion: gcp.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: default-gcp
+spec:
+  projectID: "lustrous-bit-313410"
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: gcp-creds-01
+      key: creds
