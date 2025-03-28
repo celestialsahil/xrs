@@ -1,0 +1,31 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: vpc-gcp
+  labels:
+    provider: gcp
+spec:
+  compositeTypeRef:
+    apiVersion: network.example.org/v1alpha1
+    kind: XVPC
+  resources:
+    - name: network
+      base:
+        apiVersion: compute.gcp.upbound.io/v1beta1
+        kind: Network
+        spec:
+          forProvider:
+            description: ""
+            autoCreateSubnetworks: false  # Note the camelCase change
+            routingMode: GLOBAL
+          providerConfigRef: 
+            name: default
+      patches:
+        - fromFieldPath: spec.name
+          toFieldPath: metadata.name  # Networks often use metadata.name instead
+        - fromFieldPath: spec.description
+          toFieldPath: spec.forProvider.description
+        - fromFieldPath: spec.autocreateSubnetworks
+          toFieldPath: spec.forProvider.autoCreateSubnetworks  # Note the camelCase change
+        - fromFieldPath: spec.routingMode
+          toFieldPath: spec.forProvider.routingMode
