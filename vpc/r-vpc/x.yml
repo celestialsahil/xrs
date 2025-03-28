@@ -3,7 +3,7 @@ kind: Composition
 metadata:
   name: vpc-gcp
   labels:
-    provider: gcp
+    provider: provider-gcp
 spec:
   compositeTypeRef:
     apiVersion: network.example.org/v1alpha1
@@ -19,7 +19,7 @@ spec:
             autoCreateSubnetworks: false  # Note the camelCase change
             routingMode: GLOBAL
           providerConfigRef: 
-            name: default
+            name: default-gcp
       patches:
         - fromFieldPath: spec.name
           toFieldPath: metadata.name  # Networks often use metadata.name instead
