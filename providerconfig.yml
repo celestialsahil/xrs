@@ -3,7 +3,7 @@ kind: ProviderConfig
 metadata:
   name: default-gcp
 spec:
-  projectID: "lustrous-bit-313410"
+  projectID: "opensourcetools-poc"
   credentials:
     source: Secret
     secretRef:
