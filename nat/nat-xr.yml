@@ -1,0 +1,9 @@
+apiVersion: example.org/v1alpha1
+kind: XNatGateway
+metadata:
+  name: my-nat-gateway
+spec:
+  name: my-nat-gateway-name
+  region: us-central1
+  routerRef: my-router-name
+  sourceSubnetworkIPRangesToNat: ALL_SUBNETWORKS_ALL_IP_RANGES

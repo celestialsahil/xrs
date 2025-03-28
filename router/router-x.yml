@@ -1,0 +1,43 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: router-composition
+spec:
+  compositeTypeRef:
+    apiVersion: example.org/v1alpha1
+    kind: XRouter
+  mode: Pipeline
+  pipeline:
+    - step: create-router
+      functionRef:
+        name: function-patch-and-transform
+      input:
+        apiVersion: pt.fn.crossplane.io/v1beta1
+        kind: Resources
+        resources:
+          - name: gcp-router
+            base:
+              apiVersion: compute.gcp.upbound.io/v1beta1
+              kind: Router
+              spec:
+                forProvider:
+                  name: my-router-name
+                  region: us-central1
+                  network: ""
+            patches:
+              - type: FromCompositeFieldPath
+                fromFieldPath: spec.name
+                toFieldPath: spec.forProvider.name
+              - type: FromCompositeFieldPath
+                fromFieldPath: spec.region
+                toFieldPath: spec.forProvider.region
+              - type: FromCompositeFieldPath
+                fromFieldPath: spec.networkRef
+                toFieldPath: spec.forProvider.network
+                transforms:
+                  - type: String
+                    string:
+                      fmt: "projects/${projectID}/global/networks/%s"
+                policy:
+                  resolution: Required
+                  resolutionPolicy: Dereference

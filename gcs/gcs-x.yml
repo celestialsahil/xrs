@@ -1,0 +1,40 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: gcs-bucket-composition
+spec:
+  compositeTypeRef:
+    apiVersion: example.org/v1alpha1
+    kind: XGCSBucket
+  mode: Pipeline
+  pipeline:
+    - step: configure-bucket
+      functionRef:
+        name: function-patch-and-transform
+      input:
+        apiVersion: pt.fn.crossplane.io/v1beta1
+        kind: Resources
+        resources:
+          - name: gcp-bucket
+            base:
+              apiVersion: storage.gcp.upbound.io/v1beta1
+              kind: Bucket
+              spec:
+                forProvider:
+                  location: us-central1 # set default if nothing from XR
+                  storageClass: STANDARD # set default if nothing from XR
+                  uniformBucketLevelAccess: true #Always enable uniform bucket level access
+                  publicAccessPrevention: "inherited"
+                writeConnectionSecretToRef:
+                  name: gcs-bucket-secret
+                  namespace: crossplane-system
+            patches:
+              - type: FromCompositeFieldPath
+                fromFieldPath: spec.location
+                toFieldPath: spec.forProvider.location
+              - type: FromCompositeFieldPath
+                fromFieldPath: spec.storageClass
+                toFieldPath: spec.forProvider.storageClass
+              - type: FromCompositeFieldPath
+                fromFieldPath: spec.publicAccessPrevention
+                toFieldPath: spec.forProvider.publicAccessPrevention

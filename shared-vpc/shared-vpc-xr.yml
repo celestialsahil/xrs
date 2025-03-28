@@ -1,0 +1,7 @@
+apiVersion: example.org/v1alpha1
+kind: XSharedVPCServiceProject
+metadata:
+  name: my-shared-vpc-service
+spec:
+  project: my-service-project-id
+  hostProject: my-host-project-id

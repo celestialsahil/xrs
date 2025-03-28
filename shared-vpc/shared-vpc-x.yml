@@ -1,0 +1,28 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: shared-vpc-service-composition
+spec:
+  compositeTypeRef:
+    apiVersion: example.org/v1alpha1
+    kind: XSharedVPCServiceProject
+  mode: Pipeline
+  pipeline:
+    - step: enable-shared-vpc
+      functionRef:
+        name: function-patch-and-transform
+      input:
+        apiVersion: pt.fn.crossplane.io/v1beta1
+        kind: Resources
+        resources:
+          - name: gcp-shared-vpc
+            base:
+              apiVersion: compute.gcp.upbound.io/v1beta1
+              kind: SharedVPCHostProject
+              spec:
+                forProvider:
+                  project: my-service-project-id  # Provide default values for service project ID
+            patches:
+              - type: FromCompositeFieldPath
+                fromFieldPath: spec.project
+                toFieldPath: spec.forProvider.project

@@ -1,0 +1,7 @@
+apiVersion: example.org/v1alpha1
+kind: XNetwork
+metadata:
+  name: my-network
+spec:
+  name: my-network-name
+  autoCreateSubnetworks: false

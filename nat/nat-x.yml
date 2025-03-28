@@ -1,0 +1,47 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: nat-gateway-composition
+spec:
+  compositeTypeRef:
+    apiVersion: example.org/v1alpha1
+    kind: XNatGateway
+  mode: Pipeline
+  pipeline:
+    - step: create-nat-gateway
+      functionRef:
+        name: function-patch-and-transform
+      input:
+        apiVersion: pt.fn.crossplane.io/v1beta1
+        kind: Resources
+        resources:
+          - name: gcp-nat-gateway
+            base:
+              apiVersion: compute.gcp.upbound.io/v1beta1
+              kind: RouterNAT
+              spec:
+                forProvider:
+                  name: my-nat-gateway-name
+                  region: us-central1
+                  router: ""
+                  sourceSubnetworkIPRangesToNat: ALL_SUBNETWORKS_ALL_IP_RANGES #Default value.
+            patches:
+              - type: FromCompositeFieldPath
+                fromFieldPath: spec.name
+                toFieldPath: spec.forProvider.name
+              - type: FromCompositeFieldPath
+                fromFieldPath: spec.region
+                toFieldPath: spec.forProvider.region
+              - type: FromCompositeFieldPath
+                fromFieldPath: spec.routerRef
+                toFieldPath: spec.forProvider.router
+                transforms:
+                  - type: String
+                    string:
+                      fmt: "projects/${projectID}/regions/%s/routers/%s"
+                policy:
+                  resolution: Required
+                  resolutionPolicy: Dereference
+              - type: FromCompositeFieldPath
+                fromFieldPath: spec.sourceSubnetworkIPRangesToNat
+                toFieldPath: spec.forProvider.sourceSubnetworkIPRangesToNat

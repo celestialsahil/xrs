@@ -1,0 +1,33 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xrouters.example.org
+spec:
+  group: example.org
+  names:
+    kind: XRouter
+    plural: xrouters
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Name of the Router. Required.
+                region:
+                  type: string
+                  description: GCP region for the Router. Required.
+                networkRef:
+                  type: string
+                  description: Reference to the network to associate the subnet with. Required.
+              required:
+                - name
+                - region
+                - networkRef

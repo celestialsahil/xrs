@@ -1,0 +1,11 @@
+apiVersion: example.org/v1alpha1
+kind: XGCSBucket
+metadata:
+  name: my-new-bucket
+spec:
+  location: US
+  storageClass: STANDARD
+  publicAccessPrevention: enforced
+  writeConnectionSecretToRef:
+    name: gcs-bucket-secret
+    namespace: crossplane-system # Or your desired namespace
