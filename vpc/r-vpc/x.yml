@@ -6,7 +6,7 @@ metadata:
     provider: provider-gcp
 spec:
   compositeTypeRef:
-    apiVersion: network.example.org/v1alpha1
+    apiVersion: network.bhasha.org/v1alpha1
     kind: XVPC
   resources:
     - name: network
