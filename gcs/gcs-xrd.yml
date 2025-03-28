@@ -1,9 +1,9 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: xgcsbuckets.example.org
+  name: xgcsbucket.bhasha.org
 spec:
-  group: example.org
+  group: bhasha.org
   names:
     kind: XGCSBucket
     plural: xgcsbuckets
@@ -11,27 +11,6 @@ spec:
     - name: v1alpha1
       served: true
       referenceable: true
-      schema:
-        openAPIV3Schema:
-          type: object
-          properties:
-            spec:
-              type: object
-              properties:
-                location:
-                  type: string
-                  description: The location of the GCS bucket (e.g., US). Required.
-                storageClass:
-                  type: string
-                  description: The storage class of the GCS bucket (e.g., STANDARD, NEARLINE). Optional. Defaults to STANDARD.
-                publicAccessPrevention:
-                  type: string
-                  description: Prevents the bucket from being publically accessible. Optional. Defaults to inherited.
-              required:
-                - location
-    - name: v1beta1
-      served: true
-      referenceable: false # Only one version can be referenceable
       schema:
         openAPIV3Schema:
           type: object
