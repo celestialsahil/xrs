@@ -3,5 +3,5 @@ kind: XNetwork
 metadata:
   name: my-network
 spec:
-  name: my-network-sahil
+  name: my-network-name
   autoCreateSubnetworks: false
