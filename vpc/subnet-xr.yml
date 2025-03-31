@@ -1,9 +1,9 @@
-apiVersion: example.org/v1alpha1
+apiVersion: bhasha.org/v1alpha1
 kind: XSubnet
 metadata:
   name: my-subnet
 spec:
-  name: my-subnet-name
+  name: my-subnet-sahil
   ipCidrRange: 10.0.0.0/24
-  region: us-central1
-  networkRef: my-network-name
+  region: asia-south1
+  networkRef: my-network-sahil

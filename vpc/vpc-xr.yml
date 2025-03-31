@@ -1,7 +1,7 @@
-apiVersion: example.org/v1alpha1
+apiVersion: bhasha.org/v1alpha1
 kind: XNetwork
 metadata:
   name: my-network
 spec:
-  name: my-network-name
+  name: my-network-sahil
   autoCreateSubnetworks: false

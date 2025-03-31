@@ -4,7 +4,7 @@ metadata:
   name: network-composition
 spec:
   compositeTypeRef:
-    apiVersion: example.org/v1alpha1
+    apiVersion: bhasha.org/v1alpha1
     kind: XNetwork
   mode: Pipeline
   pipeline:

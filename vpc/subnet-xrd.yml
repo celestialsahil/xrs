@@ -1,9 +1,9 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: xsubnets.example.org
+  name: xsubnets.bhasha.org
 spec:
-  group: example.org
+  group: bhasha.org
   names:
     kind: XSubnet
     plural: xsubnets
