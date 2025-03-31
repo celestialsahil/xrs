@@ -20,13 +20,13 @@ spec:
               apiVersion: compute.gcp.upbound.io/v1beta1
               kind: Network
               spec:
+                name: my-network-sahil # Provide default values
                 forProvider:
-                  name: my-network-name # Provide default values
                   autoCreateSubnetworks: false
             patches:
               - type: FromCompositeFieldPath
                 fromFieldPath: spec.name
-                toFieldPath: spec.forProvider.name
+                toFieldPath: spec.name
               - type: FromCompositeFieldPath
                 fromFieldPath: spec.autoCreateSubnetworks
                 toFieldPath: spec.forProvider.autoCreateSubnetworks
