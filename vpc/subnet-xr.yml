@@ -7,6 +7,7 @@ spec:
   ipCidrRange: 10.0.0.0/24
   region: asia-south1
   networkRef: my-crossplane-vpc
+  privateIpGoogleAccess: true
   secondaryIpRanges:
     ipCidrRange: 10.0.2.0/24
     name: range-2
