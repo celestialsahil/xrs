@@ -6,42 +6,23 @@ spec:
   compositeTypeRef:
     apiVersion: bhasha.org/v1alpha1
     kind: XSubnet
-  mode: Pipeline
-  pipeline:
-    - step: create-subnet
-      functionRef:
-        name: function-patch-and-transform
-      input:
-        apiVersion: pt.fn.crossplane.io/v1beta1
-        kind: Resources
-        resources:
-          - name: gcp-subnet
-            base:
-              apiVersion: compute.gcp.upbound.io/v1beta1
-              kind: Subnetwork
-              spec:
-                forProvider:
-                  name: my-subnet-name # provide default values
-                  ipCidrRange: 10.0.0.0/24 # provide default values
-                  region: asia-south1 # provide default values
-                  network: ""  # must be empty, the patch will populate it
-            patches:
-              - type: FromCompositeFieldPath
-                fromFieldPath: spec.name
-                toFieldPath: spec.forProvider.name
-              - type: FromCompositeFieldPath
-                fromFieldPath: spec.ipCidrRange
-                toFieldPath: spec.forProvider.ipCidrRange
-              - type: FromCompositeFieldPath
-                fromFieldPath: spec.region
-                toFieldPath: spec.forProvider.region
-              - type: FromCompositeFieldPath
-                fromFieldPath: spec.networkRef
-                toFieldPath: spec.forProvider.network
-                transforms:
-                  - type: String
-                    string:
-                      fmt: "projects/${projectID}/global/networks/%s" #Assuming network is in the same project, adjust accordingly
-                policy:
-                  resolution: Required # Make sure the network exists!
-                  resolutionPolicy: Dereference # Dereference the network for its name
+  resources:
+    - name: gcp-subnet
+      base:
+        apiVersion: compute.gcp.upbound.io/v1beta1
+        kind: Subnetwork
+        spec:
+          forProvider:
+            name: my-subnet-name # provide default values
+            ipCidrRange: 10.0.0.0/24 # provide default values
+            region: asia-south1 # provide default values
+            network: ""  # must be empty, the patch will populate it
+      patches:
+        - fromFieldPath: spec.name
+          toFieldPath: spec.forProvider.name
+        - fromFieldPath: spec.ipCidrRange
+          toFieldPath: spec.forProvider.ipCidrRange
+        - fromFieldPath: spec.region
+          toFieldPath: spec.forProvider.region
+        - fromFieldPath: spec.networkRef
+          toFieldPath: spec.forProvider.network

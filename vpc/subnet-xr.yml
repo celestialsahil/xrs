@@ -6,4 +6,4 @@ spec:
   name: my-subnet-sahil
   ipCidrRange: 10.0.0.0/24
   region: asia-south1
-  networkRef: my-network-sahil
+  networkRef: my-crossplane-vpc
