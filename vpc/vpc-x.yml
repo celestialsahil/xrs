@@ -1,32 +1,30 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
-  name: network-composition
+  name: vpc-gcp
+  labels:
+    provider: provider-gcp
 spec:
   compositeTypeRef:
-    apiVersion: bhasha.org/v1alpha1
-    kind: XNetwork
-  mode: Pipeline
-  pipeline:
-    - step: create-network
-      functionRef:
-        name: function-patch-and-transform
-      input:
-        apiVersion: pt.fn.crossplane.io/v1beta1
-        kind: Resources
-        resources:
-          - name: gcp-network
-            base:
-              apiVersion: compute.gcp.upbound.io/v1beta1
-              kind: Network
-              spec:
-                # name: my-network-name # Provide default values -- Removed because we'll apply it through a patch
-                forProvider:
-                  autoCreateSubnetworks: false
-            patches:
-              - type: FromCompositeFieldPath
-                fromFieldPath: spec.name
-                toFieldPath: spec.name  # Moved up
-              - type: FromCompositeFieldPath
-                fromFieldPath: spec.autoCreateSubnetworks
-                toFieldPath: spec.forProvider.autoCreateSubnetworks
+    apiVersion: network.bhasha.org/v1alpha1
+    kind: XVPC
+  resources:
+    - name: network
+      base:
+        apiVersion: compute.gcp.upbound.io/v1beta1
+        kind: Network
+        metadata:
+          name: my-crossplane-vpc # Set a default for the network name. XR spec.name will override it.
+        spec:
+          forProvider:
+            description: "VPC created by Crossplane" # Set a default.  XR spec.description will override it.
+            autoCreateSubnetworks: false
+          providerConfigRef:
+            name: default-gcp  # Or your configured ProviderConfig name
+      patches:
+        - fromFieldPath: spec.name
+          toFieldPath: metadata.name
+        - fromFieldPath: spec.description
+          toFieldPath: spec.spec.forProvider.description # Corrected path
+        - fromFieldPath: spec.autoCreateSubnetworks
+          toFieldPath: spec.spec.forProvider.autoCreateSubnetworks

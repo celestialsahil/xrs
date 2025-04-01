@@ -1,14 +1,15 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: xnetworks.bhasha.org
+  name: xvpcs.network.bhasha.org
 spec:
-  group: bhasha.org
+  group: network.bhasha.org
   names:
-    kind: XNetwork
-    plural: xnetworks
-  enforcedCompositionRef:
-    name: network-composition
+    kind: XVPC
+    plural: xvpcs
+  claimNames:
+    kind: VPC
+    plural: vpcs
   versions:
     - name: v1alpha1
       served: true
@@ -22,9 +23,11 @@ spec:
               properties:
                 name:
                   type: string
-                  description: Name of the VPC.  Required.
+                  description:
+                    type: string
+                    default: "VPC created by Crossplane"
                 autoCreateSubnetworks:
                   type: boolean
-                  description: Whether to automatically create subnetworks. Optional. Defaults to false.
+                  default: false
               required:
                 - name

@@ -1,7 +1,10 @@
-apiVersion: bhasha.org/v1alpha1
-kind: XNetwork
+apiVersion: network.bhasha.org/v1alpha1
+kind: VPC
 metadata:
-  name: my-network
+  name: my-vpc
 spec:
-  name: my-network-name
+  compositionRef:
+    name: vpc-gcp
+  name: my-crossplane-vpc
+  description: "First VPC created using XRD"
   autoCreateSubnetworks: false
