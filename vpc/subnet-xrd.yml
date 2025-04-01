@@ -34,18 +34,18 @@ spec:
                   type: boolean
                   default: true
                   description: "Access Google API's via private subnet"
-                secondaryIpRanges:
+                secondaryIpRange:
                   type: array
                   items:
                     type: object
                     required:
                     - ipCidrRange
-                    - name
+                    - rangeName
                     properties:
                       ipCidrRange:
                         type: string
                         description: IP CIDR range for the Subnet. Required.
-                      name:
+                      rangeName:
                         type: string
                         description: Name of the Secondary Subnet. Required.
               required:
