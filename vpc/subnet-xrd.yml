@@ -35,7 +35,7 @@ spec:
                   default: false
                   description: "Access Google API's via private subnet"
                 secondaryIpRanges:
-                  type: object
+                  type: array
                   properties:
                     ipCidrRange:
                       type: string
