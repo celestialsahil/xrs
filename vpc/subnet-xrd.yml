@@ -32,7 +32,7 @@ spec:
                   description: Reference to the Network to associate the subnet with
                 privateIpGoogleAccess:
                   type: boolean
-                  default: false
+                  default: true
                   description: "Access Google API's via private subnet"
                 secondaryIpRanges:
                   type: array
