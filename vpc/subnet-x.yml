@@ -20,8 +20,8 @@ spec:
             network: ""  # must be empty, the patch will populate it
             privateIpGoogleAccess: false
             secondaryIpRanges:
-              ipCidrRange: ""
-              name: ""
+              - ipCidrRange: ""
+                name: ""
           providerConfigRef:
             name: default-gcp
       patches:
