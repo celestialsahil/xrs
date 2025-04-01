@@ -13,13 +13,12 @@ spec:
         kind: Subnetwork
         spec:
           forProvider:
-            name: my-subnet-name # provide default values
             ipCidrRange: 10.0.0.0/24 # provide default values
             region: asia-south1 # provide default values
             network: ""  # must be empty, the patch will populate it
       patches:
         - fromFieldPath: spec.name
-          toFieldPath: spec.forProvider.name
+          toFieldPath: metadata.name
         - fromFieldPath: spec.ipCidrRange
           toFieldPath: spec.forProvider.ipCidrRange
         - fromFieldPath: spec.region
