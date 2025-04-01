@@ -27,12 +27,8 @@ spec:
                 description:
                   type: string
                   description: "A description of the VPC"
-                autocreateSubnetworks:
+                autoCreateSubnetworks:
                   type: boolean
                   default: false
-                routingMode:
-                  type: string
-                  enum: ["REGIONAL", "GLOBAL"]
-                  default: "GLOBAL"
               required:
                 - name

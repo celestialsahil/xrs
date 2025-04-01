@@ -14,18 +14,20 @@ spec:
         apiVersion: compute.gcp.upbound.io/v1beta1
         kind: Network
         metadata:
-          name: my-crossplane-vpc  # Set a default
+          name: my-crossplane-vpc
         spec:
           forProvider:
-            description: "" # Set a default
-            autoCreateSubnetworks: false
+            description: "Default VPC description" # Set a default
+            autoCreateSubnetworks: false # Provide default values for service project ID
+          providerConfigRef:
+            name: default-gcp
       patches:
         - type: FromCompositeFieldPath
           fromFieldPath: spec.name
-          toFieldPath: metadata.name  # Corrected path!
+          toFieldPath: metadata.name
         - type: FromCompositeFieldPath
           fromFieldPath: spec.description
-          toFieldPath: spec.forProvider.description  # Corrected path!
+          toFieldPath: spec.spec.forProvider.description
         - type: FromCompositeFieldPath
           fromFieldPath: spec.autoCreateSubnetworks
-          toFieldPath: spec.forProvider.autoCreateSubnetworks  # Corrected path!
+          toFieldPath: spec.spec.forProvider.autoCreateSubnetworks
