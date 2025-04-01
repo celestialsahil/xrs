@@ -18,6 +18,7 @@ spec:
             ipCidrRange: 10.0.0.0/24 # provide default values
             region: asia-south1 # provide default values
             network: ""  # must be empty, the patch will populate it
+            secondaryIpRanges: ""
           providerConfigRef:
             name: default-gcp
       patches:
@@ -29,3 +30,5 @@ spec:
           toFieldPath: spec.forProvider.region
         - fromFieldPath: spec.networkRef
           toFieldPath: spec.forProvider.network
+        - fromFieldPath: spec.forProvider.secondaryIpRanges
+          toFieldPath: spec.forProvider.secondaryIpRanges

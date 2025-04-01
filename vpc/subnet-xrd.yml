@@ -30,6 +30,19 @@ spec:
                 networkRef:
                   type: string
                   description: Reference to the Network to associate the subnet with
+                privateIpGoogleAccess:
+                  type: bool
+                  default: false
+                  description: "Access Google API's via private subnet"
+                secondaryIpRanges:
+                  type: object
+                  properties:
+                    ipCidrRange:
+                      type: string
+                      description: IP CIDR range for the Subnet. Required.
+                    name:
+                      type: string
+                      description: Name of the Secondary Subnet. Required.
               required:
                 - name
                 - ipCidrRange
