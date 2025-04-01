@@ -8,3 +8,4 @@ spec:
   name: my-crossplane-vpc
   description: "First VPC created using XRD"
   autoCreateSubnetworks: false
+  routingMode: "GLOBAL"

@@ -19,15 +19,13 @@ spec:
           forProvider:
             description: "Default VPC description" # Set a default
             autoCreateSubnetworks: false # Provide default values for service project ID
+            routingMode: GLOBAL
           providerConfigRef:
             name: default-gcp
       patches:
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.name
+        - fromFieldPath: spec.name
           toFieldPath: metadata.name
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.description
-          toFieldPath: spec.spec.forProvider.description
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.autoCreateSubnetworks
-          toFieldPath: spec.spec.forProvider.autoCreateSubnetworks
+        - fromFieldPath: spec.description
+          toFieldPath: spec.forProvider.description
+        - fromFieldPath: spec.autoCreateSubnetworks
+          toFieldPath: spec.forProvider.autoCreateSubnetworks

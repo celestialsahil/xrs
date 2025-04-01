@@ -35,3 +35,4 @@ spec:
                   enum: ["REGIONAL", "GLOBAL"]
               required: 
                 - name
+                
