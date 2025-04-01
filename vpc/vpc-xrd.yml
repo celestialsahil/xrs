@@ -23,11 +23,16 @@ spec:
               properties:
                 name:
                   type: string
-                  description:
-                    type: string
-                    default: "VPC created by Crossplane"
-                autoCreateSubnetworks:
+                  description: "Name of the VPC"  # Keeping description as property.
+                description:
+                  type: string
+                  description: "A description of the VPC"
+                autocreateSubnetworks:
                   type: boolean
                   default: false
+                routingMode:
+                  type: string
+                  enum: ["REGIONAL", "GLOBAL"]
+                  default: "GLOBAL"
               required:
                 - name
