@@ -4,7 +4,7 @@ metadata:
   name: my-subnet
 spec:
   name: my-subnet-sahil
-  ipCidrRange: 10.0.0.0/22
+  ipCidrRange: 10.0.0.0/24
   region: asia-south2
   networkRef: my-crossplane-vpc
   privateIpGoogleAccess: true
