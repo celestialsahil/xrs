@@ -33,7 +33,5 @@ spec:
           toFieldPath: spec.forProvider.region
         - fromFieldPath: spec.networkRef
           toFieldPath: spec.forProvider.network
-        - fromFieldPath: spec.secondaryIpRanges.ipCidrRange
-          toFieldPath: spec.forProvider.secondaryIpRanges.ipCidrRange
-        - fromFieldPath: spec.secondaryIpRanges.name
-          toFieldPath: spec.forProvider.secondaryIpRanges.name
+        - fromFieldPath: spec.secondaryIpRanges
+          toFieldPath: spec.forProvider.secondaryIpRanges
