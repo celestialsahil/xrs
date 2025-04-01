@@ -2,6 +2,8 @@ apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
   name: subnet-composition
+  labels:
+    provider: provider-gcp
 spec:
   compositeTypeRef:
     apiVersion: bhasha.org/v1alpha1
@@ -16,6 +18,8 @@ spec:
             ipCidrRange: 10.0.0.0/24 # provide default values
             region: asia-south1 # provide default values
             network: ""  # must be empty, the patch will populate it
+          providerConfigRef:
+            name: default-gcp
       patches:
         - fromFieldPath: spec.name
           toFieldPath: metadata.name
