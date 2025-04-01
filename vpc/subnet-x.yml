@@ -22,6 +22,8 @@ spec:
             secondaryIpRange:
               - ipCidrRange: ""
                 rangeName: ""
+              - ipCidrRange: ""
+                rangeName: ""
           providerConfigRef:
             name: default-gcp
       patches:
