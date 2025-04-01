@@ -13,3 +13,5 @@ spec:
       rangeName: range-2
     - ipCidrRange: 10.0.3.0/24
       rangeName: range-3
+    - ipCidrRange: 10.0.4.0/24
+      rangeName: range-4
