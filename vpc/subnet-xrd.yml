@@ -31,7 +31,7 @@ spec:
                   type: string
                   description: Reference to the Network to associate the subnet with
                 privateIpGoogleAccess:
-                  type: bool
+                  type: boolean
                   default: false
                   description: "Access Google API's via private subnet"
                 secondaryIpRanges:
