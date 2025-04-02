@@ -20,7 +20,7 @@ spec:
             autoCreateNetwork: false
             billingAccount: ""
             folderId: ""
-            orgId: "373728233549"
+            orgId: ""
           providerConfigRef:
             name: default-gcp
       patches:
