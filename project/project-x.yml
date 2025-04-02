@@ -17,8 +17,8 @@ spec:
           forProvider:
             name: my-crossplane-gcp-project  # Provide default value
             displayName: My Crossplane Managed GCP Project # Provide default value
-            billingAccount: "000000-000000-000000"
-            folderId: "123456789"  # Replace with your actual folder ID
+            billingAccount: "012478-27B604-6E78BE"
+            folderId: ""  # Replace with your actual folder ID
           providerConfigRef:
             name: default-gcp
       patches:
@@ -32,5 +32,5 @@ spec:
           fromFieldPath: spec.billingAccount
           toFieldPath: spec.forProvider.billingAccount
         - type: FromCompositeFieldPath
-          fromFieldPath: spec.folderId  # Linking the Folder ID
+          fromFieldPath: spec.folderId
           toFieldPath: spec.forProvider.folderId

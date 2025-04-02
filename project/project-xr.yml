@@ -7,5 +7,5 @@ spec:
     name: gcp-project-composition
   name: crossplane-gcp-project-id
   displayName: "My Crossplane Managed GCP Project"
-  billingAccount: "000000-000000-000000"
-  orgId: "1234567890123"
+  billingAccount: "012478-27B604-6E78BE"
+  folderId: "1026213493613"
