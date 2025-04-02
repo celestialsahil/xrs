@@ -23,20 +23,23 @@ spec:
               properties:
                 name:
                   type: string
-                  description: The project ID. This is usually immutable. Required.
-                displayName:
+                  description: The display name of the project
+                projectId:
                   type: string
-                  description: A user-friendly display name for the project. Required.
+                  description: he project ID. Changing this forces a new project to be created.
+                autoCreateNetwork:
+                  type: boolean
+                  description: Controls whether the 'default' network exists on the project.
                 orgId:
                   type: string
                   description: The GCP Organization ID to which this project will belong. Optional.
-                billingAccount:
-                  type: string
-                  description: The ID of the billing account associated with this project. Required.
                 folderId:
                   type: string
                   description: The Folder this project should reside in. Optional
+                billingAccount:
+                  type: string
+                  description: The ID of the billing account associated with this project. Required.
               required:
                 - name
-                - displayName
+                - projectId
                 - billingAccount

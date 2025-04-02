@@ -9,3 +9,4 @@ spec:
   displayName: "My Crossplane Managed GCP Project"
   billingAccount: "012478-27B604-6E78BE"
   folderId: "1026213493613"
+  autoCreateNetwork: true
