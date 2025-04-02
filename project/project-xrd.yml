@@ -24,9 +24,9 @@ spec:
                 name:
                   type: string
                   description: The display name of the project
-                projectId:
-                  type: string
-                  description: he project ID. Changing this forces a new project to be created.
+                # projectId:
+                #   type: string
+                #   description: The project ID. Changing this forces a new project to be created.
                 autoCreateNetwork:
                   type: boolean
                   description: Controls whether the 'default' network exists on the project.

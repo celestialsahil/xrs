@@ -16,7 +16,7 @@ spec:
         spec:
           forProvider:
             name: ""
-            projectId: ""
+            # projectId: ""
             autoCreateNetwork: false
             billingAccount: ""
             folderId: ""
