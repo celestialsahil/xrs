@@ -1,13 +1,11 @@
 apiVersion: bhasha.org/v1alpha1
-kind: OrgPolicy
+kind: ScopedOrgPolicy
 metadata:
-  name: my-disable-serial-port-policy
+  name: my-project-policy-assignment
 spec:
   compositionRef:
-    name: gcp-org-policy-composition
-  parent: "organizations/373728233549"  # Replace with your organization ID
-  spec:
-    inheritFromParent: false #Example.  Customize as needed.
-    reset: false #Example. Customize as needed.
-    rules:
-    - enforce: "TRUE"  #Example. Customize as needed.
+    name: gcp-scoped-org-policy-composition
+  scopeType: project
+  scopeId: gcp-project-id # Replace with your actual Project ID
+  policyName: disable-serial-port-policy # Replace with the name of the existing Policy
+  enforce: "TRUE"  # <---- ADD THIS
