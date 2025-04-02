@@ -1,0 +1,12 @@
+apiVersion: bhasha.org/v1alpha1
+kind: OrgPolicy
+metadata:
+  name: my-disable-serial-port-policy
+spec:
+  compositionRef:
+    name: gcp-org-policy-composition
+  policyId: constraints/compute.disableSerialPortAccess
+  orgId: "1234567890123" # Replace with your organization ID
+  listPolicy:
+    allowedValues: [] #No restriction
+    inheritFromParent: false #Not to inherit from parent

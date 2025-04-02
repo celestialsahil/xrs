@@ -1,0 +1,53 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xorgpolicies.bhasha.org
+spec:
+  group: bhasha.org
+  names:
+    kind: XOrgPolicy
+    plural: xorgpolicies
+  claimNames:
+    kind: OrgPolicy # Name of claim
+    plural: orgpolicies # Name of claim
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                policyId:
+                  type: string
+                  description: The policy id of the constraint to set. Required.
+                orgId:
+                  type: string
+                  description: The Organization ID to set the policy on. Required.
+                listPolicy:
+                  type: object
+                  description: Configuration for a ListOrganizationPolicy.
+                  properties:
+                    allowedValues:
+                      type: array
+                      items:
+                        type: string
+                      description: The list of allowed values for the constraint.  Mutually exclusive with denyValues.
+                    deniedValues:
+                      type: array
+                      items:
+                        type: string
+                      description: The list of denied values for the constraint.  Mutually exclusive with allowedValues.
+                    inheritFromParent:
+                      type: boolean
+                      description: If set to true, the values from the effective policy of the parent organization are inherited. Defaults to false.
+                    suggestedValue:
+                      type: string
+                      description: Optional. The Google Cloud resource value that is displayed in the UI.
+              required:
+                - policyId
+                - orgId
+                - listPolicy

@@ -1,0 +1,45 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: gcp-org-policy-composition
+  labels:
+    provider: provider-gcp
+spec:
+  compositeTypeRef:
+    apiVersion: bhasha.org/v1alpha1
+    kind: XOrgPolicy
+  resources:
+    - name: gcp-org-policy
+      base:
+        apiVersion: orgpolicy.gcp.upbound.io/v1beta1
+        kind: Policy
+        spec:
+          forProvider:
+            policyId: constraints/compute.disableSerialPortAccess # The default Value
+            orgId: "1234567890123"  # Replace with your actual organization ID
+            listPolicy:
+              allowedValues: []
+              inheritFromParent: false
+          providerConfigRef:
+            name: default-gcp
+      patches:
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.policyId
+          toFieldPath: spec.forProvider.policyId
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.orgId
+          toFieldPath: spec.forProvider.orgId
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.listPolicy.allowedValues
+          toFieldPath: spec.forProvider.listPolicy.allowedValues
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.listPolicy.deniedValues
+          toFieldPath: spec.forProvider.listPolicy.deniedValues
+          optional: true #Because Denied values are not must!
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.listPolicy.inheritFromParent
+          toFieldPath: spec.forProvider.listPolicy.inheritFromParent
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.listPolicy.suggestedValue
+          toFieldPath: spec.forProvider.listPolicy.suggestedValue
+          optional: true
