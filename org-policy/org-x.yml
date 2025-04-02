@@ -15,10 +15,10 @@ spec:
         kind: Policy
         spec:
           forProvider:
-            parent: organizations/1234567890123 # Replace with your actual organization ID. MUST BE SET!
+            parent: "" # Replace with your actual organization ID. MUST BE SET!
             spec: {} #Leave the spec empty so that the patches apply
           providerConfigRef:
-            name: default
+            name: default-gcp
       patches:
         - type: FromCompositeFieldPath
           fromFieldPath: spec.parent

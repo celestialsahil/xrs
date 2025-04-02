@@ -5,9 +5,9 @@ metadata:
 spec:
   compositionRef:
     name: gcp-org-policy-composition
-  parent: organizations/1234567890123  # Replace with your organization ID
+  parent: "organizations/373728233549"  # Replace with your organization ID
   spec:
     inheritFromParent: false #Example.  Customize as needed.
     reset: false #Example. Customize as needed.
     rules:
-    - enforce: "FALSE"  #Example. Customize as needed.
+    - enforce: "TRUE"  #Example. Customize as needed.
