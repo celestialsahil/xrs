@@ -24,7 +24,7 @@ spec:
             name: default-gcp
       patches:
         - fromFieldPath: spec.name
-          toFieldPath: metadata.name
+          toFieldPath: spec.forProvider.name
         - fromFieldPath: spec.projectId
           toFieldPath: spec.forProvider.projectId
         - fromFieldPath: spec.autoCreateNetwork
