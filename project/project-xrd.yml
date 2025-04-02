@@ -38,5 +38,4 @@ spec:
                   description: The ID of the billing account associated with this project. Required.
               required:
                 - name
-                - projectId
                 - billingAccount
