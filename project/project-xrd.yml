@@ -24,12 +24,13 @@ spec:
                 name:
                   type: string
                   description: The display name of the project
-                # projectId:
-                #   type: string
-                #   description: The project ID. Changing this forces a new project to be created.
+                projectId:
+                  description: The project ID. Changing this forces a new project to be created.
+                  type: string
                 autoCreateNetwork:
                   type: boolean
                   description: Controls whether the 'default' network exists on the project.
+                  default: true
                 folderId:
                   type: string
                   description: The Folder this project should reside in. Optional
@@ -38,4 +39,5 @@ spec:
                   description: The ID of the billing account associated with this project. Required.
               required:
                 - name
+                - projectId
                 - billingAccount
