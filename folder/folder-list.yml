@@ -6,7 +6,7 @@ spec:
   compositionRef:
     name: gcp-folder-composition
   displayName: prod-lz
-  parent: organizations/1026213493613  # Replace with your actual organization ID
+  parent: organizations/373728233549
 ---
 apiVersion: bhasha.org/v1alpha1
 kind: Folder
@@ -16,4 +16,4 @@ spec:
   compositionRef:
     name: gcp-folder-composition
   displayName: dev-lz
-  parent: folders/1026213493613  # Replace with your actual organization ID
+  parent: folders/1026213493613
