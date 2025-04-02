@@ -3,7 +3,7 @@ kind: Composition
 metadata:
   name: gcp-org-policy-composition
   labels:
-    provider: provider-gcp
+    provider: provider-gcp-orgpolicy
 spec:
   compositeTypeRef:
     apiVersion: bhasha.org/v1alpha1
@@ -15,31 +15,14 @@ spec:
         kind: Policy
         spec:
           forProvider:
-            policyId: constraints/compute.disableSerialPortAccess # The default Value
-            orgId: "1234567890123"  # Replace with your actual organization ID
-            listPolicy:
-              allowedValues: []
-              inheritFromParent: false
+            parent: organizations/1234567890123 # Replace with your actual organization ID. MUST BE SET!
+            spec: {} #Leave the spec empty so that the patches apply
           providerConfigRef:
-            name: default-gcp
+            name: default
       patches:
         - type: FromCompositeFieldPath
-          fromFieldPath: spec.policyId
-          toFieldPath: spec.forProvider.policyId
+          fromFieldPath: spec.parent
+          toFieldPath: spec.forProvider.parent
         - type: FromCompositeFieldPath
-          fromFieldPath: spec.orgId
-          toFieldPath: spec.forProvider.orgId
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.listPolicy.allowedValues
-          toFieldPath: spec.forProvider.listPolicy.allowedValues
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.listPolicy.deniedValues
-          toFieldPath: spec.forProvider.listPolicy.deniedValues
-          optional: true #Because Denied values are not must!
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.listPolicy.inheritFromParent
-          toFieldPath: spec.forProvider.listPolicy.inheritFromParent
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.listPolicy.suggestedValue
-          toFieldPath: spec.forProvider.listPolicy.suggestedValue
-          optional: true
+          fromFieldPath: spec.spec
+          toFieldPath: spec.forProvider.spec
