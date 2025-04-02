@@ -5,7 +5,7 @@ metadata:
 spec:
   compositionRef:
     name: gcp-project-composition
-  name: crossplane-gcp-project
+  name: crossplane-gcp-project-01
   projectId: sahil-01
   billingAccount: "012478-27B604-6E78BE"
   folderId: "1026213493613"
