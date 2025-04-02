@@ -25,8 +25,8 @@ spec:
       patches:
         - fromFieldPath: spec.name
           toFieldPath: metadata.name
-        - fromFieldPath: spec.projectId
-          toFieldPath: spec.forProvider.projectId
+        # - fromFieldPath: spec.projectId
+        #   toFieldPath: spec.forProvider.projectId
         - fromFieldPath: spec.autoCreateNetwork
           toFieldPath: spec.forProvider.autoCreateNetwork
         - fromFieldPath: spec.billingAccount
