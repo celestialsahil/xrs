@@ -30,9 +30,6 @@ spec:
                 autoCreateNetwork:
                   type: boolean
                   description: Controls whether the 'default' network exists on the project.
-                orgId:
-                  type: string
-                  description: The GCP Organization ID to which this project will belong. Optional.
                 folderId:
                   type: string
                   description: The Folder this project should reside in. Optional
