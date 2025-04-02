@@ -1,0 +1,42 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xprojects.bhasha.org
+spec:
+  group: bhasha.org
+  names:
+    kind: XProject
+    plural: xprojects
+  claimNames:
+    kind: Project
+    plural: projects
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The project ID. This is usually immutable. Required.
+                displayName:
+                  type: string
+                  description: A user-friendly display name for the project. Required.
+                orgId:
+                  type: string
+                  description: The GCP Organization ID to which this project will belong. Optional.
+                billingAccount:
+                  type: string
+                  description: The ID of the billing account associated with this project. Required.
+                folderId:
+                  type: string
+                  description: The Folder this project should reside in. Optional
+              required:
+                - name
+                - displayName
+                - billingAccount

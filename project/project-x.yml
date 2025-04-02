@@ -1,0 +1,36 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: gcp-project-composition
+  labels:
+    provider: provider-gcp
+spec:
+  compositeTypeRef:
+    apiVersion: bhasha.org/v1alpha1
+    kind: XProject
+  resources:
+    - name: gcp-project
+      base:
+        apiVersion: cloudplatform.gcp.upbound.io/v1beta1
+        kind: Project
+        spec:
+          forProvider:
+            name: my-crossplane-gcp-project  # Provide default value
+            displayName: My Crossplane Managed GCP Project # Provide default value
+            billingAccount: "000000-000000-000000"
+            folderId: "123456789"  # Replace with your actual folder ID
+          providerConfigRef:
+            name: default-gcp
+      patches:
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.name
+          toFieldPath: metadata.name
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.displayName
+          toFieldPath: spec.forProvider.displayName
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.billingAccount
+          toFieldPath: spec.forProvider.billingAccount
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.folderId  # Linking the Folder ID
+          toFieldPath: spec.forProvider.folderId

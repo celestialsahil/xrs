@@ -1,0 +1,11 @@
+apiVersion: bhasha.org/v1alpha1
+kind: XProject
+metadata:
+  name: my-crossplane-gcp-project
+spec:
+  compositionRef:
+    name: gcp-project-composition
+  name: crossplane-gcp-project-id
+  displayName: "My Crossplane Managed GCP Project"
+  billingAccount: "000000-000000-000000"
+  orgId: "1234567890123"
