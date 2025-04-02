@@ -6,22 +6,25 @@ items:
 - apiVersion: bhasha.org/v1alpha1
   kind: Project
   metadata:
-    name: project-one
-    namespace: team-a
+    name: lz-prod-01
   spec:
     compositionRef:
       name: gcp-project-composition
     name: project-a-id
-    displayName: "Team A's Project"
-    billingAccount: "000000-000000-000000"
+    projectId: sahil-01-a
+    billingAccount: "012478-27B604-6E78BE"
+    folderId: "1026213493613"
+    autoCreateNetwork: false
 
 - apiVersion: bhasha.org/v1alpha1
   kind: Project
   metadata:
-    name: project-two
+    name: lz-dev-01
   spec:
     compositionRef:
       name: gcp-project-composition
     name: project-b-id
-    displayName: "Team B's Project"
-    billingAccount: "000000-000000-000000"
+    projectId: sahil-02-b
+    billingAccount: "012478-27B604-6E78BE"
+    folderId: "1026213493613"
+    autoCreateNetwork: false
