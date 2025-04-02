@@ -5,8 +5,8 @@ metadata:
 spec:
   compositionRef:
     name: gcp-project-composition
-  name: crossplane-gcp-project-id
-  projectId: CROSSPLANE-01
+  name: "crossplane-gcp-project-id"
+  projectId: "CROSSPLANE-01"
   billingAccount: "012478-27B604-6E78BE"
   folderId: "1026213493613"
   autoCreateNetwork: true
