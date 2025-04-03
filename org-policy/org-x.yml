@@ -13,6 +13,9 @@ spec:
       base:
         apiVersion: orgpolicy.gcp.upbound.io/v1beta1
         kind: Policy
+        metadata:
+          annotations:
+            crossplane.io/external-name: ""
         spec:
           forProvider:
             parent: "" # Replace with your actual organization ID. MUST BE SET!
@@ -24,6 +27,8 @@ spec:
           providerConfigRef:
             name: default-gcp
       patches:
+        - fromFieldPath: metadata.annotations["crossplane.io/external-name"]
+          toFieldPath: metadata.annotations["crossplane.io/external-name"]
         - fromFieldPath: spec.parent
           toFieldPath: spec.forProvider.parent
         - fromFieldPath: spec.spec
