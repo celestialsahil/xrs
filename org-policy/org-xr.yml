@@ -2,7 +2,7 @@ apiVersion: bhasha.org/v1alpha1
 kind: Policy
 metadata:
   annotations:
-    crossplane.io/external-name: constraints/iam.disableServiceAccountKeyUpload
+    crossplane.io/external-name: projects/opensourcetools-poc/policies/iam.disableServiceAccountKeyUpload
   name: primary
 spec:
   compositionRef:
