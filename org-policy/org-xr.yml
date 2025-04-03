@@ -7,6 +7,7 @@ metadata:
 spec:
   compositionRef:
     name: gcp-org-policy-composition
+  parent: projects/opensourcetools-poc
   spec:
     inheritFromParent: false
     reset: false
