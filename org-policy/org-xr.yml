@@ -3,7 +3,7 @@ kind: OrgPolicy
 metadata:
   annotations:
     crossplane.io/external-name: iam.disableServiceAccountKeyUpload
-  name: 
+  name: orgpolicy1
 spec:
   compositionRef:
     name: gcp-org-policy-composition
