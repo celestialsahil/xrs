@@ -3,11 +3,10 @@ kind: Policy
 metadata:
   name: test1
   annotations:
-    crossplane.io/external-name: iam.disableServiceAccountKeyUpload
+    crossplane.io/external-name: projects/opensourcetools-poc/policies/iam.disableServiceAccountKeyUpload
 spec:
   compositionRef:
     name: gcp-org-policy-composition
-  parent: projects/opensourcetools-poc  # Replace with your organization ID
   spec:
     inheritFromParent: false
     reset: false

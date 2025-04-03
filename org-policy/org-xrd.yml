@@ -82,5 +82,4 @@ spec:
                                   type: string
                                 description: List of values denied at this resource.
               required:
-                - parent
                 - spec
