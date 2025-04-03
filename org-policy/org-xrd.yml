@@ -24,12 +24,6 @@ spec:
                 parent:
                   type: string
                   description: The parent of the resource.  Required.  Must be in the format organizations/{orgId}, folders/{folder_id}, projects/{project_id}.
-                parentRef:
-                  type: object
-                  properties:
-                    name: 
-                      type: string
-                      description: Name of the referenced object.
                 spec:
                   type: object
                   description: Basic information about the Organization Policy.
