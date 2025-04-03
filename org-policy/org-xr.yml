@@ -1,5 +1,5 @@
 apiVersion: bhasha.org/v1alpha1
-kind: OrgPolicy
+kind: Policy
 metadata:
   annotations:
     crossplane.io/external-name: constraints/iam.disableServiceAccountKeyUpload

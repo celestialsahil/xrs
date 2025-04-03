@@ -5,11 +5,11 @@ metadata:
 spec:
   group: bhasha.org
   names:
-    kind: XOrgPolicy
-    plural: xorgpolicies
+    kind: XPolicy
+    plural: xpolicies
   claimNames:
-    kind: OrgPolicy
-    plural: orgpolicies
+    kind: Policy
+    plural: policies
   versions:
     - name: v1alpha1
       served: true
