@@ -3,7 +3,7 @@ kind: Policy
 metadata:
   name: test1
   annotations:
-    crossplane.io/external-name: projects/opensourcetools-poc/policies/iam.disableServiceAccountKeyUpload
+    crossplane.io/external-name: iam.disableServiceAccountKeyUpload
 spec:
   compositionRef:
     name: gcp-org-policy-composition
