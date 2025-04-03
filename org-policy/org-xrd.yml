@@ -1,15 +1,15 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: xscopedorgpolicies.bhasha.org
+  name: xorgpolicies.bhasha.org
 spec:
   group: bhasha.org
   names:
-    kind: XScopedOrgPolicy
-    plural: xscopedorgpolicies
+    kind: XOrgPolicy
+    plural: xorgpolicies
   claimNames:
-    kind: ScopedOrgPolicy
-    plural: scopedorgpolicies
+    kind: OrgPolicy
+    plural: orgpolicies
   versions:
     - name: v1alpha1
       served: true
@@ -21,24 +21,66 @@ spec:
             spec:
               type: object
               properties:
-                scopeType:
+                parent:
                   type: string
-                  description: "The type of resource to apply the policy to. Must be one of: organization, folder, project."
-                  enum:
-                    - organization
-                    - folder
-                    - project
-                scopeId:
-                  type: string
-                  description: "The ID of the resource to apply the policy to (e.g., organization ID, folder ID, project ID)."
-                policyName:
-                  type: string
-                  description: "Name of the Policy to apply."
-                enforce:  # <---- ADD THIS
-                  type: string
-                  description: "Enforce the policy: 'TRUE' or 'FALSE'."
+                  description: The parent of the resource.  Required.  Must be in the format organizations/{orgId}, folders/{folder_id}, projects/{project_id}.
+                spec:
+                  type: object
+                  description: Basic information about the Organization Policy.
+                  properties:
+                    inheritFromParent:
+                      type: boolean
+                      description: Determines the inheritance behavior for this Policy.
+                    reset:
+                      type: boolean
+                      description: Ignores policies set above this resource and restores the constraint_default enforcement behavior.
+                    rules:
+                      type: array
+                      description: Up to 10 PolicyRules are allowed.
+                      items:
+                        type: object
+                        properties:
+                          allowAll:
+                            type: string
+                            description: Setting this to "TRUE" means that all values are allowed. This field can be set only in Policies for list constraints.
+                          condition:
+                            type: object
+                            description: A condition which determines whether this rule is used in the evaluation of the policy.
+                            properties:
+                              description:
+                                type: string
+                                description: Optional. Description of the expression.
+                              expression:
+                                type: string
+                                description: Textual representation of an expression in Common Expression Language syntax.
+                              location:
+                                type: string
+                                description: Optional. String indicating the location of the expression for error reporting.
+                              title:
+                                type: string
+                                description: Optional. Title for the expression.
+                          denyAll:
+                            type: string
+                            description: Setting this to "TRUE" means that all values are denied. This field can be set only in Policies for list constraints.
+                            pattern: "TRUE|FALSE"
+                          enforce:
+                            type: string
+                            description: If "TRUE", then the Policy is enforced. If "FALSE", then any configuration is acceptable.
+                            pattern: "TRUE|FALSE"
+                          values:
+                            type: object
+                            description: List of values to be used for this PolicyRule. This field can be set only in Policies for list constraints.
+                            properties:
+                              allowedValues:
+                                type: array
+                                items:
+                                  type: string
+                                description: List of values allowed at this resource.
+                              deniedValues:
+                                type: array
+                                items:
+                                  type: string
+                                description: List of values denied at this resource.
               required:
-                - scopeType
-                - scopeId
-                - policyName
-                - enforce
+                - parent
+                - spec

@@ -1,34 +1,33 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
-  name: gcp-scoped-org-policy-composition
+  name: gcp-org-policy-composition
   labels:
     provider: provider-gcp-orgpolicy
 spec:
   compositeTypeRef:
     apiVersion: bhasha.org/v1alpha1
-    kind: XScopedOrgPolicy
+    kind: XOrgPolicy
   resources:
     - name: gcp-org-policy
       base:
-        apiVersion: bhasha.org/v1alpha1  # IMPORTANT: Replace this
-        kind: PolicyAssignment # Replace this with the correct value
+        apiVersion: orgpolicy.gcp.upbound.io/v1beta1
+        kind: Policy
         spec:
-          policyRef: "" # set through the patch
-          targetRef: "" # The ID of the scope (folder/project)
-          enforce:  # The enforcement needs a place holder for correct attachment.
+          forProvider:
+            parent: "" # Replace with your actual organization ID. MUST BE SET!
+            spec: 
+              inheritFromParent: ""
+              reset: ""
+              rules:
+              - enforce: ""
+          providerConfigRef:
+            name: default-gcp
       patches:
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.policyName
-          toFieldPath: spec.spec.policyRef
+        - fromFieldPath: spec.parent
+          toFieldPath: spec.forProvider.parent
+        - fromFieldPath: spec.spec
+          toFieldPath: spec.forProvider.spec
 
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.scopeType
-          toFieldPath: spec.spec.targetRef
-
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.scopeId
-          toFieldPath: spec.spec.targetRef
-        - type: FromCompositeFieldPath # To apply from org plicy from XR
-          fromFieldPath: spec.enforce
-          toFieldPath: spec.spec.enforce
+        
+        

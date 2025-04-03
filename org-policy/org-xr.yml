@@ -1,11 +1,15 @@
 apiVersion: bhasha.org/v1alpha1
-kind: ScopedOrgPolicy
+kind: OrgPolicy
 metadata:
-  name: my-project-policy-assignment
+  annotations:
+    crossplane.io/external-name: iam.disableServiceAccountKeyUpload
+  name: 
 spec:
   compositionRef:
-    name: gcp-scoped-org-policy-composition
-  scopeType: project
-  scopeId: gcp-project-id # Replace with your actual Project ID
-  policyName: disable-serial-port-policy # Replace with the name of the existing Policy
-  enforce: "TRUE"  # <---- ADD THIS
+    name: gcp-org-policy-composition
+  parent: projects/373728233549  # Replace with your organization ID
+  spec:
+    inheritFromParent: false
+    reset: false
+    rules:
+    - enforce: "TRUE" # This will be used to override rule's enforce at org level.
