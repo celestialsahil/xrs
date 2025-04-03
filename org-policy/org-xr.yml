@@ -1,7 +1,11 @@
 apiVersion: bhasha.org/v1alpha1
 kind: OrgPolicy
 metadata:
-  name: constraints/iam.disableServiceAccountKeyUpload
+  annotations:
+    crossplane.io/external-name: iam.disableServiceAccountKeyUpload
+    meta.upbound.io/example-id: orgpolicy/v1beta1/policy
+    upjet.upbound.io/manual-intervention: Policy requires Org Access Rights
+  name: primary
 spec:
   compositionRef:
     name: gcp-org-policy-composition
