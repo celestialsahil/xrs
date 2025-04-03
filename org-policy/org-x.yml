@@ -13,9 +13,6 @@ spec:
       base:
         apiVersion: orgpolicy.gcp.upbound.io/v1beta1
         kind: Policy
-        metadata:
-          annotations:
-            crossplane.io/external-name: projects/opensourcetools-poc/policies/iam.disableServiceAccountKeyUpload
         spec:
           forProvider:
             parent: "" # Replace with your actual organization ID. MUST BE SET!
