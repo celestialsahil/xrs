@@ -2,7 +2,7 @@ apiVersion: bhasha.org/v1alpha1
 kind: OrgPolicy
 metadata:
   annotations:
-    crossplane.io/external-name: projects/opensourcetools-poc/policies/iam.disableServiceAccountKeyUpload
+    crossplane.io/external-name: constraints/iam.disableServiceAccountKeyUpload
   name: primary
 spec:
   compositionRef:
@@ -12,4 +12,4 @@ spec:
     inheritFromParent: false
     reset: false
     rules:
-    - enforce: "TRUE" # This will be used to override rule's enforce at org level.
+    - enforce: "TRUE"
