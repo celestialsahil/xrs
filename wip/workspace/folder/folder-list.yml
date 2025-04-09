@@ -6,32 +6,43 @@ items:
 - apiVersion: bhasha.org/v1alpha1
   kind: Folder
   metadata:
-    name: fldr-bu1
+    name: fldr-1
   spec:
     compositionRef:
       name: gcp-folder-composition
-    displayName: fldr-bu1
+    displayName: fldr-1
     parentRef:
       name: lz-cross-plane-fldr
   
 - apiVersion: bhasha.org/v1alpha1
   kind: Folder
   metadata:
-    name: fldr-bu2
+    name: fldr-2
   spec:
     compositionRef:
       name: gcp-folder-composition
-    displayName: fldr-bu2
+    displayName: fldr-2
     parentRef:
       name: lz-cross-plane-fldr
+    
+- apiVersion: bhasha.org/v1alpha1
+  kind: Folder
+  metadata:
+    name: fldr-dev
+  spec:
+    compositionRef:
+      name: gcp-folder-composition
+    displayName: fldr-dev
+    parentRef:
+      name: fldr-1
 
 - apiVersion: bhasha.org/v1alpha1
   kind: Folder
   metadata:
-    name: fldr-bu3
+    name: fldr-prod
   spec:
     compositionRef:
       name: gcp-folder-composition
-    displayName: dev-lz
+    displayName: fldr-prod
     parentRef:
-      name: lz-cross-plane-fldr
+      name: fldr-2
