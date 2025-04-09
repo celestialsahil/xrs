@@ -17,6 +17,12 @@ spec:
           forProvider:
             displayName: ""
             parent: ""
+            labels: {}
+            parentRef:
+              name: ""
+              policy:
+                resolution: Required
+                resolve: Always
           providerConfigRef:
             name: default-gcp
       patches:
@@ -24,3 +30,11 @@ spec:
           toFieldPath: spec.forProvider.displayName
         - fromFieldPath: spec.parent
           toFieldPath: spec.forProvider.parent
+        - fromFieldPath: "spec.labels"
+          toFieldPath: "spec.forProvider.labels"
+        - fromFieldPath: spec.parentRef.name
+          toFieldPath: spec.forProvider.parentRef.name
+        - fromFieldPath: spec.parentRef.policy.resolution
+          toFieldPath: spec.forProvider.parentRef.policy.resolution
+        - fromFieldPath: spec.parentRef.policy.resolve
+          toFieldPath: spec.forProvider.parentRef.policy.resolve

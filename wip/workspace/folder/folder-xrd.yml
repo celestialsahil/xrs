@@ -27,6 +27,32 @@ spec:
                 parent:
                   type: string
                   description: The resource name of the parent Organization. Must be of the form organizations/{org_id}. Required.
+                labels:
+                  type: object
+                  additionalProperties:
+                    type: string
+                parentRef:
+                  description: Reference to a Folder in cloudplatform to populate parent.
+                  properties:
+                    name:
+                      type: string
+                      description: Name of the referenceable object.
+                    policy:
+                      properties:
+                        resolution:
+                          default: Required
+                          description: Resolution specifies whether resolution of this reference is required.
+                          type: string
+                          enum:
+                            - Required
+                            - Optional
+                        resolve:
+                          description: esolve specifies when this reference should be resolved.
+                          default: Always
+                          enum:
+                            - Always
+                            - IfNotPresent
+                          type: string
               required:
                 - displayName
                 - parent

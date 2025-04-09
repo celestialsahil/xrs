@@ -1,9 +1,12 @@
 apiVersion: bhasha.org/v1alpha1
 kind: Folder
 metadata:
-  name: my-folder-claim
+  name: lz-cross-plane-fldr
 spec:
   compositionRef:
     name: gcp-folder-composition
-  displayName: "lz-prod"
-  parent: folders/1026213493613
+  displayName: "lz-cross-poc"
+  parent: organizations/373728233549
+  labels: 
+    resource: folder
+    name:  lz-cross-poc
