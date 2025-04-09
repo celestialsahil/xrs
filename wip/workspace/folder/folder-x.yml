@@ -31,6 +31,8 @@ spec:
           toFieldPath: spec.forProvider.parent
         - fromFieldPath: spec.parentRef.name
           toFieldPath: spec.forProvider.parentRef.name
+          policy:
+            fromFieldPath: Optional
         - fromFieldPath: spec.parentRef.policy.resolution
           toFieldPath: spec.forProvider.parentRef.policy.resolution
         - fromFieldPath: spec.parentRef.policy.resolve

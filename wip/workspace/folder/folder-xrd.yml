@@ -26,7 +26,7 @@ spec:
                   description: The folder display name. Required.
                 parent:
                   type: string
-                  description: The resource name of the parent Organization. Must be of the form organizations/{org_id}. Required.
+                  description: The resource name of the parent Organization. Must be of the form folders/{folder_id} or organizations/{org_id}. Required.
                 parentRef:
                   type: object
                   description: Reference to a Folder in cloudplatform to populate parent.
