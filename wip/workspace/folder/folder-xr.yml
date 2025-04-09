@@ -7,6 +7,3 @@ spec:
     name: gcp-folder-composition
   displayName: "lz-cross-poc"
   parent: organizations/373728233549
-  labels: 
-    resource: folder
-    name:  lz-cross-poc
