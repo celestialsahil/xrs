@@ -13,9 +13,6 @@ items:
     displayName: fldr-bu1
     parentRef:
       name: lz-cross-plane-fldr
-    labels: 
-      resource: folder
-      name:  fldr-bu1
   
 - apiVersion: bhasha.org/v1alpha1
   kind: Folder
@@ -27,9 +24,6 @@ items:
     displayName: fldr-bu2
     parentRef:
       name: lz-cross-plane-fldr
-    labels: 
-      resource: folder
-      name:  fldr-bu1
 
 - apiVersion: bhasha.org/v1alpha1
   kind: Folder
@@ -41,6 +35,3 @@ items:
     displayName: dev-lz
     parentRef:
       name: lz-cross-plane-fldr
-    labels: 
-      resource: folder
-      name:  fldr-bu1
