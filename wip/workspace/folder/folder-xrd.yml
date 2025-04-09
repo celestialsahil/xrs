@@ -38,6 +38,7 @@ spec:
                       type: string
                       description: Name of the referenceable object.
                     policy:
+                      type: object
                       properties:
                         resolution:
                           default: Required
