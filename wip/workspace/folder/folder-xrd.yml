@@ -47,7 +47,6 @@ spec:
                             - Optional
                         resolve:
                           description: esolve specifies when this reference should be resolved.
-                          default: Always
                           enum:
                             - Always
                             - IfNotPresent
