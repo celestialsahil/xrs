@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: List
+metadata:
+  name: SharedVPCHostProjectList
+items:
+- apiVersion: xsharedvpchostprojects.bhasha.org/v1alpha1
+  kind: SharedVPCHostProject
+  metadata:
+    name: my-shared-vpc-host-project
+  spec:
+    compositionRef:
+      name: shared-vpc-host-project-composition
+    project: opensourcetools-poc

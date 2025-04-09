@@ -1,0 +1,38 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xvpcs.network.bhasha.org
+spec:
+  group: network.bhasha.org
+  names:
+    kind: XVPC
+    plural: xvpcs
+  claimNames:
+    kind: VPC
+    plural: vpcs
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: "Name of the VPC"  # Keeping description as property.
+                description:
+                  type: string
+                  description: "A description of the VPC"
+                autoCreateSubnetworks:
+                  type: boolean
+                  default: false
+                routingMode:
+                  type: string
+                  default: "GLOBAL"
+                  enum: ["REGIONAL", "GLOBAL"]
+              required:
+                - name

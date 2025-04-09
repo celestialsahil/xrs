@@ -1,0 +1,11 @@
+apiVersion: network.bhasha.org/v1alpha1
+kind: VPC
+metadata:
+  name: my-vpc
+spec:
+  compositionRef:
+    name: vpc-gcp
+  name: my-crossplane-vpc
+  description: "First VPC created using XRD"
+  autoCreateSubnetworks: false
+  routingMode: "GLOBAL"

@@ -1,0 +1,10 @@
+apiVersion: gcp.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: default
+spec:
+  credentials:
+    impersonateServiceAccount:
+      name: crossplane-sa@opensourcetools-poc.iam.gserviceaccount.com
+    source: ImpersonateServiceAccount
+  projectID: opensourcetools-poc

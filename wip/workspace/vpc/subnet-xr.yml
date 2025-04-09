@@ -1,0 +1,17 @@
+apiVersion: bhasha.org/v1alpha1
+kind: XSubnet
+metadata:
+  name: my-subnet
+spec:
+  name: my-subnet-sahil
+  ipCidrRange: 10.0.0.0/24
+  region: asia-south2
+  networkRef: my-crossplane-vpc
+  privateIpGoogleAccess: true
+  secondaryIpRange:
+    - ipCidrRange: 10.0.2.0/24
+      rangeName: range-2
+    - ipCidrRange: 10.0.3.0/24
+      rangeName: range-3
+    - ipCidrRange: 10.0.4.0/24
+      rangeName: range-4

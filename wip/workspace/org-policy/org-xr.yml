@@ -1,0 +1,15 @@
+apiVersion: bhasha.org/v1alpha1
+kind: Policy
+metadata:
+  name: test1
+  annotations:
+    crossplane.io/external-name: projects/opensourcetools-poc/policies/iam.disableServiceAccountKeyUpload
+spec:
+  compositionRef:
+    name: gcp-org-policy-composition
+  parent: projects/opensourcetools-poc
+  spec:
+    inheritFromParent: false
+    reset: false
+    rules:
+    - enforce: "TRUE"

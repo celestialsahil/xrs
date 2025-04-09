@@ -1,0 +1,43 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xprojects.bhasha.org
+spec:
+  group: bhasha.org
+  names:
+    kind: XProject
+    plural: xprojects
+  claimNames:
+    kind: Project
+    plural: projects
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The display name of the project
+                projectId:
+                  description: The project ID. Changing this forces a new project to be created.
+                  type: string
+                autoCreateNetwork:
+                  type: boolean
+                  description: Controls whether the 'default' network exists on the project.
+                  default: true
+                folderId:
+                  type: string
+                  description: The Folder this project should reside in. Optional
+                billingAccount:
+                  type: string
+                  description: The ID of the billing account associated with this project. Required.
+              required:
+                - name
+                - projectId
+                - billingAccount

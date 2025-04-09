@@ -1,0 +1,35 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: gcp-project-composition
+  labels:
+    provider: provider-gcp
+spec:
+  compositeTypeRef:
+    apiVersion: bhasha.org/v1alpha1
+    kind: XProject
+  resources:
+    - name: gcp-project
+      base:
+        apiVersion: cloudplatform.gcp.upbound.io/v1beta1
+        kind: Project
+        spec:
+          forProvider:
+            name: ""
+            projectId: ""
+            autoCreateNetwork: ""
+            billingAccount: ""
+            folderId: ""
+          providerConfigRef:
+            name: default-gcp
+      patches:
+        - fromFieldPath: spec.name
+          toFieldPath: spec.forProvider.name
+        - fromFieldPath: spec.projectId
+          toFieldPath: spec.forProvider.projectId
+        - fromFieldPath: spec.autoCreateNetwork
+          toFieldPath: spec.forProvider.autoCreateNetwork
+        - fromFieldPath: spec.billingAccount
+          toFieldPath: spec.forProvider.billingAccount
+        - fromFieldPath: spec.folderId
+          toFieldPath: spec.forProvider.folderId

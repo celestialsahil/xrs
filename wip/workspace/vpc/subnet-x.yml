@@ -1,0 +1,39 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: subnet-composition
+  labels:
+    provider: provider-gcp
+spec:
+  compositeTypeRef:
+    apiVersion: bhasha.org/v1alpha1
+    kind: XSubnet
+  resources:
+    - name: gcp-subnet
+      base:
+        apiVersion: compute.gcp.upbound.io/v1beta1
+        kind: Subnetwork
+        spec:
+          forProvider:
+            ipCidrRange: 10.0.0.0/24 # provide default values
+            region: asia-south1 # provide default values
+            network: ""  # must be empty, the patch will populate it
+            privateIpGoogleAccess: ""
+            secondaryIpRange:
+              - ipCidrRange: ""
+                rangeName: ""
+          providerConfigRef:
+            name: default-gcp
+      patches:
+        - fromFieldPath: spec.name
+          toFieldPath: metadata.name
+        - fromFieldPath: spec.ipCidrRange
+          toFieldPath: spec.forProvider.ipCidrRange
+        - fromFieldPath: spec.region
+          toFieldPath: spec.forProvider.region
+        - fromFieldPath: spec.networkRef
+          toFieldPath: spec.forProvider.network
+        - fromFieldPath: spec.privateIpGoogleAccess
+          toFieldPath: spec.forProvider.privateIpGoogleAccess
+        - fromFieldPath: spec.secondaryIpRange
+          toFieldPath: spec.forProvider.secondaryIpRange

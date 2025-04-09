@@ -1,0 +1,12 @@
+apiVersion: bhasha.org/v1alpha1
+kind: Project
+metadata:
+  name: my-crossplane-gcp-project
+spec:
+  compositionRef:
+    name: gcp-project-composition
+  name: crossplane-gcp-project-01
+  projectId: sahil-01
+  billingAccount: "012478-27B604-6E78BE"
+  folderId: "1026213493613"
+  autoCreateNetwork: false

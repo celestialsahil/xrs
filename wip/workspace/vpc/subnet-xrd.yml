@@ -1,0 +1,55 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xsubnets.bhasha.org
+spec:
+  group: bhasha.org
+  names:
+    kind: XSubnet
+    plural: xsubnets
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Name of the Subnet. Required.
+                ipCidrRange:
+                  type: string
+                  description: IP CIDR range for the Subnet. Required.
+                region:
+                  type: string
+                  description: GCP region for the Subnet. Required.
+                networkRef:
+                  type: string
+                  description: Reference to the Network to associate the subnet with
+                privateIpGoogleAccess:
+                  type: boolean
+                  default: false
+                  description: "Access Google API's via private subnet"
+                secondaryIpRange:
+                  type: array
+                  items:
+                    type: object
+                    required:
+                    - ipCidrRange
+                    - rangeName
+                    properties:
+                      ipCidrRange:
+                        type: string
+                        description: IP CIDR range for the Subnet. Required.
+                      rangeName:
+                        type: string
+                        description: Name of the Secondary Subnet. Required.
+              required:
+                - name
+                - ipCidrRange
+                - region
+                - networkRef

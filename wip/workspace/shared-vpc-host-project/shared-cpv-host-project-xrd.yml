@@ -1,0 +1,28 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xsharedvpchostprojects.bhasha.org
+spec:
+  group: bhasha.org
+  names:
+    kind: XSharedVPCHostProject
+    plural: xsharedvpchostprojects
+  claimNames:
+    kind: SharedVPCHostProject
+    plural: sharedvpchostprojects
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                project:
+                  type: string
+                  description: The ID of the project that will serve as a Shared VPC host project. Required.
+              required:
+                - project

@@ -1,0 +1,9 @@
+apiVersion: bhasha.org/v1alpha1
+kind: Folder
+metadata:
+  name: my-folder-claim
+spec:
+  compositionRef:
+    name: gcp-folder-composition
+  displayName: "lz-prod"
+  parent: folders/1026213493613
