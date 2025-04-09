@@ -25,7 +25,8 @@ items:
     compositionRef:
       name: gcp-folder-composition
     displayName: fldr-bu2
-    name: lz-cross-plane-fldr
+    parentRef:
+      name: lz-cross-plane-fldr
     labels: 
       resource: folder
       name:  fldr-bu1
@@ -38,7 +39,8 @@ items:
     compositionRef:
       name: gcp-folder-composition
     displayName: dev-lz
-    name: lz-cross-plane-fldr
+    parentRef:
+      name: lz-cross-plane-fldr
     labels: 
       resource: folder
       name:  fldr-bu1
