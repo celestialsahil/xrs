@@ -32,6 +32,7 @@ spec:
                   additionalProperties:
                     type: string
                 parentRef:
+                  type: object
                   description: Reference to a Folder in cloudplatform to populate parent.
                   properties:
                     name:
@@ -39,6 +40,7 @@ spec:
                       description: Name of the referenceable object.
                     policy:
                       type: object
+                      description: Policies for referencing.
                       properties:
                         resolution:
                           default: Required
@@ -55,7 +57,7 @@ spec:
                             - IfNotPresent
                           type: string
                   required:
-                    - name
+                  - name
               required:
                 - displayName
                 - parent
