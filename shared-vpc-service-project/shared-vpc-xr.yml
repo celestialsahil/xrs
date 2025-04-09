@@ -1,0 +1,9 @@
+apiVersion: xsharedvpcserviceprojects.bhasha.org/v1alpha1
+kind: SharedVPCServiceProject
+metadata:
+  name: my-shared-vpc-service-project
+spec:
+  compositionRef:
+    name: shared-vpc-service-project-composition
+  hostProject: opensourcetools-poc
+  serviceProject: prj-balco-dev-001

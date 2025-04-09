@@ -1,0 +1,24 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: shared-vpc-service-project-composition
+spec:
+  compositeTypeRef:
+    apiVersion: xsharedvpcserviceprojects.bhasha.org/v1alpha1
+    kind: XSharedVPCServiceProject
+  resources:
+  - name: shared-vpc-service-project
+    base:
+      apiVersion: compute.gcp.upbound.io/v1beta1
+      kind: SharedVPCServiceProject
+      spec:
+        forProvider:
+          hostProject: ""  # Provide default values for Host project ID
+          serviceProject: "" # Provide default values for Service project ID
+    patches:
+      - type: FromCompositeFieldPath
+        fromFieldPath: spec.hostProject
+        toFieldPath: spec.forProvider.hostProject
+      - type: FromCompositeFieldPath
+        fromFieldPath: spec.serviceProject
+        toFieldPath: spec.forProvider.serviceProject
