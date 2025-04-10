@@ -28,7 +28,7 @@ spec:
 apiVersion: gcp.upbound.io/v1beta1
 kind: ProviderConfig
 metadata:
-  name: default
+  name: default-gcp
 spec:
   credentials:
     impersonateServiceAccount:
