@@ -16,6 +16,9 @@ items:
       parentSelector:
         matchLabels:
           role: lz-cross-plane-sahil
+        policy:
+          resolve: Always
+          resolution: Required
     
   - apiVersion: bhasha.org/v1alpha1
     kind: Folder
@@ -30,6 +33,9 @@ items:
       parentSelector:
         matchLabels:
           role: lz-cross-plane-sahil
+        policy:
+          resolve: Always
+          resolution: Required
       
   - apiVersion: bhasha.org/v1alpha1
     kind: Folder
