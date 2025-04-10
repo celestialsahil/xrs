@@ -29,23 +29,11 @@ spec:
           toFieldPath: spec.forProvider.parent
           policy:
             fromFieldPath: Optional
-        - fromFieldPath: spec.parentRef.policy.resolution
-          toFieldPath: spec.forProvider.parentRef.policy.resolution
+        - fromFieldPath: spec.parentRef
+          toFieldPath: spec.forProvider.parentRef
           policy:
             fromFieldPath: Optional
-        - fromFieldPath: spec.parentRef.policy.resolve
-          toFieldPath: spec.forProvider.parentRef.policy.resolve
-          policy:
-            fromFieldPath: Optional
-        - fromFieldPath: spec.parentSelector.matchLabels
-          toFieldPath: spec.forProvider.parentSelector.matchLabels
-          policy:
-            fromFieldPath: Optional
-        - fromFieldPath: spec.parentSelector.policy.resolution
-          toFieldPath: spec.forProvider.parentSelector.policy.resolution
-          policy:
-            fromFieldPath: Optional
-        - fromFieldPath: spec.parentSelector.policy.resolve
-          toFieldPath: spec.forProvider.parentSelector.policy.resolve
+        - fromFieldPath: spec.parentSelector
+          toFieldPath: spec.forProvider.parentSelector
           policy:
             fromFieldPath: Optional
