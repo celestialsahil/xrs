@@ -7,28 +7,40 @@ items:
   kind: Folder
   metadata:
     name: fldr-1
+    labels:
+      role: fldr-1
   spec:
     compositionRef:
       name: gcp-folder-composition
     displayName: fldr-1
-    parentRef:
+    parentSelector:
+      matchControllerRef: 
+        matchLabels:
+          role: lz-cross-plane-fldr
       name: lz-cross-plane-fldr
   
 - apiVersion: bhasha.org/v1alpha1
   kind: Folder
   metadata:
     name: fldr-2
+    labels:
+      role: fldr-2
   spec:
     compositionRef:
       name: gcp-folder-composition
     displayName: fldr-2
     parentRef:
+      selector:
+        matchLabels:
+          role: lz-cross-plane-fldr
       name: lz-cross-plane-fldr
     
 - apiVersion: bhasha.org/v1alpha1
   kind: Folder
   metadata:
     name: fldr-dev
+    labels: 
+      role: fldr-dev
   spec:
     compositionRef:
       name: gcp-folder-composition
@@ -40,6 +52,8 @@ items:
   kind: Folder
   metadata:
     name: fldr-prod
+    labels:
+      role: fldr-prod
   spec:
     compositionRef:
       name: gcp-folder-composition

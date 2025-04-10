@@ -2,6 +2,8 @@ apiVersion: bhasha.org/v1alpha1
 kind: Folder
 metadata:
   name: lz-cross-plane-fldr
+  labels:
+    name: lz-cross-plane-fldr
 spec:
   compositionRef:
     name: gcp-folder-composition

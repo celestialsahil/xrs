@@ -37,3 +37,19 @@ spec:
           toFieldPath: spec.forProvider.parentRef.policy.resolve
           policy:
             fromFieldPath: Optional
+        - fromFieldPath: spec.parentSelector.matchControllerRef
+          toFieldPath: spec.forProvider.parentSelector.matchControllerRef
+          policy:
+            fromFieldPath: Optional
+        - fromFieldPath: spec.parentSelector.matchLabels
+          toFieldPath: spec.forProvider.parentSelector.matchLabels
+          policy:
+            fromFieldPath: Optional
+        - fromFieldPath: spec.parentSelector.policy.resolution
+          toFieldPath: spec.forProvider.parentSelector.policy.resolution
+          policy:
+            fromFieldPath: Optional
+        - fromFieldPath: spec.parentSelector.policy.resolve
+          toFieldPath: spec.forProvider.parentSelector.policy.resolve
+          policy:
+            fromFieldPath: Optional
