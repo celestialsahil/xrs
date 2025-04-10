@@ -56,6 +56,3 @@ spec:
               required:
                 - displayName
                 - parent
-              oneOf:
-                - required: [parent]
-                - required: [parentRef]

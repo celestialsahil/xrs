@@ -17,6 +17,11 @@ spec:
           forProvider:
             displayName: ""
             parent: ""
+            parentRef:
+              name: ""
+              policy:
+                resolution: Required
+                resolve: Always
           providerConfigRef:
             name: default-gcp
       patches:
