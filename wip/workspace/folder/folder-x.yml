@@ -14,8 +14,6 @@ spec:
         apiVersion: cloudplatform.gcp.upbound.io/v1beta1
         kind: Folder
         metadata:
-          labels:
-            crossplane.io/composite: ""
         spec:
           forProvider:
             displayName: ""
@@ -24,21 +22,3 @@ spec:
       patches:
         - fromFieldPath: spec.displayName
           toFieldPath: spec.forProvider.displayName
-        - fromFieldPath: spec.parentRef.name
-          toFieldPath: spec.forProvider.parentRef.name
-          policy:
-            fromFieldPath: Optional
-        - fromFieldPath: spec.parent
-          toFieldPath: spec.forProvider.parent
-          policy:
-            fromFieldPath: Optional
-        - fromFieldPath: spec.parentRef
-          toFieldPath: spec.forProvider.parentRef
-          policy:
-            fromFieldPath: Optional
-        - fromFieldPath: spec.parentSelector
-          toFieldPath: spec.forProvider.parentSelector
-          policy:
-            fromFieldPath: Optional
-        - fromFieldPath: metadata.labels["crossplane.io/composite"]
-          toFieldPath: metadata.labels["crossplane.io/composite"]
