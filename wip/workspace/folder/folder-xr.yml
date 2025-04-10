@@ -1,7 +1,9 @@
 apiVersion: bhasha.org/v1alpha1
 kind: Folder
 metadata:
-  name: lz-cross-plane-sahil-89j
+  name: lz-cross-plane-sahil
+  annotations:
+    crossplane.io/external-name: lz-cross-plane-sahil
   labels:
     role: lz-cross-plane-sahil
 spec:

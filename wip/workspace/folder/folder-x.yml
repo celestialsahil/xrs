@@ -14,7 +14,8 @@ spec:
         apiVersion: cloudplatform.gcp.upbound.io/v1beta1
         kind: Folder
         metadata:
-          name: ""
+          annotations:
+            crossplane.io/external-name: ""
         spec:
           forProvider:
             displayName: ""
@@ -39,5 +40,5 @@ spec:
           toFieldPath: spec.forProvider.parentSelector
           policy:
             fromFieldPath: Optional
-        - fromFieldPath: metadata.name
-          toFieldPath: metadata.name
+        - fromFieldPath: metadata.annotations["crossplane.io/external-name"]
+          toFieldPath: metadata.annotations["crossplane.io/external-name"]
