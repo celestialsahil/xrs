@@ -3,7 +3,7 @@ kind: Folder
 metadata:
   name: lz-cross-plane-sahil
   labels:
-    role: lz-cross-plane-sahil
+    Role: lz-cross-plane-sahil
 spec:
   compositionRef:
     name: gcp-folder-composition
