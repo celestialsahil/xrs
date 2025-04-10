@@ -15,6 +15,7 @@ spec:
         kind: Folder
         metadata:
           name: ""
+          labels: []
         spec:
           forProvider:
             displayName: ""
