@@ -1,4 +1,3 @@
----
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
@@ -60,7 +59,6 @@ spec:
                   type: object
                   description: Selector for a Folder in cloudplatform to populate parent.
                   properties:
-                    type: object
                     matchLabels:
                       type: object
                       description: MatchLabels ensures an object with matching labels is selected.
@@ -70,7 +68,6 @@ spec:
                       type: object
                       description: Policies for selection.
                       properties:
-                        type: object
                         resolution:
                           type: string
                           default: Required
