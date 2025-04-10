@@ -13,6 +13,8 @@ spec:
       base:
         apiVersion: cloudplatform.gcp.upbound.io/v1beta1
         kind: Folder
+        metadata:
+          name: ""
         spec:
           forProvider:
             displayName: ""
@@ -37,3 +39,5 @@ spec:
           toFieldPath: spec.forProvider.parentSelector
           policy:
             fromFieldPath: Optional
+        - fromFieldPath: metadata.name
+          toFieldPath: metadata.name
