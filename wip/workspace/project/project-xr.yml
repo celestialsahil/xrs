@@ -11,4 +11,7 @@ spec:
   folderId: "393522161271"
   autoCreateNetwork: false
   labels:
+    app: dev-app-001
+    owner: sahil
+    cost-center: 999
     env: dev
