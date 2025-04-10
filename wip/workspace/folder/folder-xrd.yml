@@ -1,3 +1,4 @@
+---
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
@@ -26,7 +27,8 @@ spec:
                   description: The folder display name. Required.
                 parent:
                   type: string
-                  description: The resource name of the parent Organization. Must be of the form folders/{folder_id} or organizations/{org_id}. Required.
+                  description: The resource name of the parent Organization. Must be of the form
+                    folders/{folder_id} or organizations/{org_id}. Required.
                 parentRef:
                   type: object
                   description: Reference to a Folder in cloudplatform to populate parent.
@@ -40,7 +42,8 @@ spec:
                       properties:
                         resolution:
                           default: Required
-                          description: Resolution specifies whether resolution of this reference is required.
+                          description: Resolution specifies whether resolution of this reference is
+                            required.
                           type: string
                           enum:
                             - Required
@@ -54,32 +57,41 @@ spec:
                   required:
                     - name
                 parentSelector:
-                    type: object
-                    description: Selector for a Folder in cloudplatform to populate parent.
-                    properties:
-                      matchControllerRef:
-                        description: MatchControllerRef ensures an object with the same controller reference as the selecting object is selected.
-                        type: boolean
-                      matchLabels:
-                        additionalProperties:
+                  type: object
+                  description: Selector for a Folder in cloudplatform to populate parent.
+                  properties:
+                    matchControllerRef:
+                      description: MatchControllerRef ensures an object with the same controller
+                        reference as the selecting object is selected.
+                      type: boolean
+                    matchLabels:
+                      additionalProperties:
+                        type: string
+                      description: MatchLabels ensures an object with matching labels is selected.
+                      type: object
+                    policy:
+                      type: object
+                      description: Policies for selection.
+                      properties:
+                        type: string
+                        resolution:
                           type: string
-                        description: MatchLabels ensures an object with matching labels is selected.
-                        type: object
-                      policy:
-                        type: object
-                        description: Policies for selection.
-                        properties:
-                          type: string
-                          resolution:
-                            type: string
-                            default: Required
-                            description: Resolution specifies whether resolution of this reference is required. The default is 'Required', which means the reconcile will fail if the reference cannot be resolved. 'Optional' means this reference will be a no-op if it cannot be resolved.
-                            enum:
+                          default: Required
+                          description: Resolution specifies whether resolution of this reference is
+                            required. The default is 'Required', which means the
+                            reconcile will fail if the reference cannot be
+                            resolved. 'Optional' means this reference will be a
+                            no-op if it cannot be resolved.
+                          enum:
                             - Required
                             - Optional
-                          resolve:
-                            description: Resolve specifies when this reference should be resolved. The default is 'IfNotPresent', which will attempt to resolve the reference only when the corresponding field is not present. Use 'Always' to resolve the reference on every reconcile.
-                            enum:                              
+                        resolve:
+                          description: Resolve specifies when this reference should be resolved. The
+                            default is 'IfNotPresent', which will attempt to
+                            resolve the reference only when the corresponding
+                            field is not present. Use 'Always' to resolve the
+                            reference on every reconcile.
+                          enum:
                             - Always
                             - IfNotPresent
               required:
