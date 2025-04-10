@@ -20,7 +20,7 @@ items:
     labels:
       app: prod-app
       owner: sahil
-      cost-center: 1000
+      cost-center: "1000"
 
 - apiVersion: bhasha.org/v1alpha1
   kind: Project
@@ -39,4 +39,4 @@ items:
     labels:
       app: dev-app
       owner: sahil
-      cost-center: 1010
+      cost-center: "1010"
