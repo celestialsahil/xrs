@@ -19,7 +19,10 @@ spec:
             projectId: ""
             autoCreateNetwork: ""
             billingAccount: ""
-            folderId: ""
+            labels: 
+              app: ""
+              owner: ""
+              cost-center: ""
           providerConfigRef:
             name: default-gcp
       patches:
@@ -33,3 +36,11 @@ spec:
           toFieldPath: spec.forProvider.billingAccount
         - fromFieldPath: spec.folderId
           toFieldPath: spec.forProvider.folderId
+          policy:
+            fromFieldPath: Optional
+        - fromFieldPath: spec.folderIdSelector
+          toFieldPath: spec.forProvider.folderIdSelector
+          policy:
+            fromFieldPath: Optional
+        - fromFieldPath: spec.labels
+          toFieldPath: spec.forProvider.labels
