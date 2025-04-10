@@ -13,5 +13,5 @@ spec:
   labels:
     app: dev-app-001
     owner: sahil
-    cost-center: 999
+    cost-center: "999"
     env: dev
