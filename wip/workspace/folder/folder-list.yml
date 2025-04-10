@@ -13,10 +13,12 @@ items:
       compositionRef:
         name: gcp-folder-composition
       displayName: fldr-1
-      parentSelector:
-        matchLabels:
-          role: lz-cross-plane-sahil
-          crossplane.io/claim-name: lz-cross-plane-sahil
+      parentRef:
+        name: folders/178713639388
+      # parentSelector:
+      #   matchLabels:
+      #     role: lz-cross-plane-sahil
+      #     crossplane.io/claim-name: lz-cross-plane-sahil
     
   - apiVersion: bhasha.org/v1alpha1
     kind: Folder
@@ -28,9 +30,11 @@ items:
       compositionRef:
         name: gcp-folder-composition
       displayName: fldr-2
-      parentSelector:
-        matchLabels:
-          role: lz-cross-plane-sahil
+      parentRef:
+        name: folders/178713639388
+      # parentSelector:
+      #   matchLabels:
+      #     role: lz-cross-plane-sahil
       
   - apiVersion: bhasha.org/v1alpha1
     kind: Folder
