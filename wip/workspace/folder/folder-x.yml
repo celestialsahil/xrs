@@ -14,7 +14,7 @@ spec:
         apiVersion: cloudplatform.gcp.upbound.io/v1beta1
         kind: Folder
         metadata:
-          annotations:
+          labels:
             crossplane.io/composite: ""
         spec:
           forProvider:
@@ -40,5 +40,5 @@ spec:
           toFieldPath: spec.forProvider.parentSelector
           policy:
             fromFieldPath: Optional
-        - fromFieldPath: metadata.annotations["crossplane.io/composite"]
-          toFieldPath: metadata.annotations["crossplane.io/composite"]
+        - fromFieldPath: metadata.labels["crossplane.io/composite"]
+          toFieldPath: metadata.labels["crossplane.io/composite"]
