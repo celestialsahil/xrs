@@ -23,7 +23,7 @@ spec:
                 resolution: Required
                 resolve: Always
           providerConfigRef:
-            name: default
+            name: default-gcp
       patches:
         - fromFieldPath: spec.displayName
           toFieldPath: spec.forProvider.displayName
@@ -37,5 +37,9 @@ spec:
             fromFieldPath: Optional
         - fromFieldPath: spec.parentRef.policy.resolution
           toFieldPath: spec.forProvider.parentRef.policy.resolution
+          policy:
+            fromFieldPath: Optional
         - fromFieldPath: spec.parentRef.policy.resolve
           toFieldPath: spec.forProvider.parentRef.policy.resolve
+          policy:
+            fromFieldPath: Optional
