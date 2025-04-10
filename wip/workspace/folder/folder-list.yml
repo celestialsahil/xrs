@@ -41,8 +41,9 @@ items:
       compositionRef:
         name: gcp-folder-composition
       displayName: fldr-dev
-      parentRef:
-        name: fldr-1
+      parentSelector:
+        matchLabels:
+          role: fldr-1
 
   - apiVersion: bhasha.org/v1alpha1
     kind: Folder
@@ -54,5 +55,6 @@ items:
       compositionRef:
         name: gcp-folder-composition
       displayName: fldr-prod
-      parentRef:
-        name: fldr-2
+      parentSelector:
+        matchLabels:
+          role: fldr-2
