@@ -5,8 +5,8 @@ metadata:
 spec:
   compositionRef:
     name: gcp-project-composition
-  name: crossplane-fldr-dev-001
-  projectId: sahil-01-00-001
+  name: crossplane-fldr-dev-002
+  projectId: sahil-01-00-002
   billingAccount: "012478-27B604-6E78BE"
   folderId: "393522161271"
   autoCreateNetwork: false

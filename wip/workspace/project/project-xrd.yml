@@ -82,6 +82,10 @@ spec:
                   description: A set of key/value label pairs to assign to the project.
                   additionalProperties:
                     type: string
+                  required:
+                    - app
+                    - owner
+                    - cost-center
               required:
                 - name
                 - projectId
