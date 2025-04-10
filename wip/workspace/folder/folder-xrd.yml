@@ -73,7 +73,7 @@ spec:
                       type: object
                       description: Policies for selection.
                       properties:
-                        type: string
+                        type: object
                         resolution:
                           type: string
                           default: Required
