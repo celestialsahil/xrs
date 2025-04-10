@@ -21,12 +21,12 @@ spec:
       patches:
         - fromFieldPath: spec.displayName
           toFieldPath: spec.forProvider.displayName
-        - fromFieldPath: spec.parent
-          toFieldPath: spec.forProvider.parent
-          policy:
-            fromFieldPath: Optional
         - fromFieldPath: spec.parentRef.name
           toFieldPath: spec.forProvider.parentRef.name
+          policy:
+            fromFieldPath: Optional
+        - fromFieldPath: spec.parent
+          toFieldPath: spec.forProvider.parent
           policy:
             fromFieldPath: Optional
         - fromFieldPath: spec.parentRef.policy.resolution
