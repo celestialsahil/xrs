@@ -10,8 +10,8 @@ items:
   spec:
     compositionRef:
       name: gcp-project-composition
-    name: project-a-id
-    projectId: sahil-01-a
+    name: project-a-id-02
+    projectId: sahil-01-a-02
     billingAccount: "012478-27B604-6E78BE"
     folderIdSelector:
       matchLabels:
@@ -29,8 +29,8 @@ items:
   spec:
     compositionRef:
       name: gcp-project-composition
-    name: project-b-id
-    projectId: sahil-02-b
+    name: project-b-id-02
+    projectId: sahil-02-b-02
     billingAccount: "012478-27B604-6E78BE"
     folderIdSelector:
       matchLabels:
