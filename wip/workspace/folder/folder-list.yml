@@ -14,7 +14,7 @@ items:
         name: gcp-folder-composition
       displayName: fldr-1
       parentRef:
-        name: lz-cross-poc-sahil
+        name: lz-cross-plane-sahil-mz5sn-smp26
       # parentSelector:
       #   matchLabels:
       #     role: lz-cross-plane-sahil
@@ -31,7 +31,7 @@ items:
         name: gcp-folder-composition
       displayName: fldr-2
       parentRef:
-        name: lz-cross-poc-sahil
+        name: lz-cross-plane-sahil-mz5sn-smp26
       # parentSelector:
       #   matchLabels:
       #     role: lz-cross-plane-sahil
