@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: List
 metadata:
-  name: projectlist
+  name: FolderList
 items:
 - apiVersion: bhasha.org/v1alpha1
   kind: Folder
