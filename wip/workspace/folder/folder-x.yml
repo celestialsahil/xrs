@@ -16,6 +16,7 @@ spec:
         metadata:
           annotations:
             crossplane.io/external-name: ""
+            crossplane.io/claim-name: ""
         spec:
           forProvider:
             displayName: ""
