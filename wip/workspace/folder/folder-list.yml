@@ -15,7 +15,7 @@ items:
       displayName: fldr-1
       parentSelector:
         matchLabels:
-          Role: lz-cross-plane-sahil
+          Role=lz-cross-plane-sahil
     
   - apiVersion: bhasha.org/v1alpha1
     kind: Folder
@@ -29,7 +29,7 @@ items:
       displayName: fldr-2
       parentSelector:
         matchLabels:
-          Role: lz-cross-plane-sahil
+          Role=lz-cross-plane-sahil
       
   - apiVersion: bhasha.org/v1alpha1
     kind: Folder
