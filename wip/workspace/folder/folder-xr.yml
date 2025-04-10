@@ -4,6 +4,7 @@ metadata:
   name: lz-cross-plane-sahil
   annotations:
     crossplane.io/external-name: lz-cross-plane-sahil
+    crossplane.io/claim-name: lz-cross
   labels:
     role: lz-cross-plane-sahil
 spec:
