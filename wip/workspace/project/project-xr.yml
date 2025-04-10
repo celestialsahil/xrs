@@ -10,3 +10,5 @@ spec:
   billingAccount: "012478-27B604-6E78BE"
   folderId: "393522161271"
   autoCreateNetwork: false
+  labels:
+    env: dev
