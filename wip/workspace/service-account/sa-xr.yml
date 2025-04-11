@@ -1,0 +1,9 @@
+api: bhasha.org/v1apha1
+kind: ServiceAccount
+metadata:
+  name: sa-lz
+spec:
+  compositionRef:
+    name: gcp-sa-composition
+  displayName: sa-cross-plane-poc-01
+  project: sahil-01-00-002
