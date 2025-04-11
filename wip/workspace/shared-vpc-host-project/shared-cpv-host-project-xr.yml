@@ -5,4 +5,4 @@ metadata:
 spec:
   compositionRef:
     name: shared-vpc-host-project-composition
-  project: opensourcetools-poc
+  project: sahil-01-a-02
