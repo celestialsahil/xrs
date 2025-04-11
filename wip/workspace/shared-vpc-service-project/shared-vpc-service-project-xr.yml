@@ -6,4 +6,4 @@ spec:
   compositionRef:
     name: shared-vpc-service-project-composition
   hostProject: opensourcetools-poc
-  serviceProject: project-b-id-02
+  serviceProject: sahil-02-b-02
