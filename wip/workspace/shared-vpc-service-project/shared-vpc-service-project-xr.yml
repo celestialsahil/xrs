@@ -1,7 +1,7 @@
-apiVersion: xsharedvpcserviceprojects.bhasha.org/v1alpha1
+apiVersion: bhasha.org/v1alpha1
 kind: SharedVPCServiceProject
 metadata:
-  name: my-shared-vpc-service-project
+  name: my-shared-vpc-project-prj-balco
 spec:
   compositionRef:
     name: shared-vpc-service-project-composition
