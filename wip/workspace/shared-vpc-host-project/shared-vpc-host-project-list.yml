@@ -12,7 +12,7 @@ items:
         name: shared-vpc-host-project-composition
       project: opensourcetools-poc
       
-  - apiVersion: xsharedvpchostprojects.bhasha.org/v1alpha1
+  - apiVersion: bhasha.org/v1alpha1
     kind: SharedVPCHostProject
     metadata:
       name: my-shared-vpc-host-project
