@@ -6,8 +6,19 @@ items:
 - apiVersion: bhasha.org/v1alpha1
   kind: SharedVPCServiceProject
   metadata:
-    name: my-shared-vpc-service-project
+    name: my-shared-vpc-service-002
   spec:
     compositionRef:
       name: shared-vpc-service-project-composition
-    project: opensourcetools-poc
+    hostProject: opensourcetools-poc
+    serviceProject: sahil-01-00-002
+
+- apiVersion: bhasha.org/v1alpha1
+  kind: SharedVPCServiceProject
+  metadata:
+    name: my-shared-vpc-service-001
+  spec:
+    compositionRef:
+      name: shared-vpc-service-project-composition
+    hostProject: opensourcetools-poc
+    serviceProject: project-stage-001
