@@ -6,4 +6,4 @@ spec:
   compositionRef:
     name: shared-vpc-service-project-composition
   hostProject: opensourcetools-poc
-  serviceProject: prj-balco-dev-001
+  serviceProject: project-b-id-02
