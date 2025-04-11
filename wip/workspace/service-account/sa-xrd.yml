@@ -1,0 +1,32 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xserviceaccounts.bhasha.org
+spec:
+  group: bhasha.org
+  names:
+    kind: XServiceAccount
+    plural: xserviceaccounts
+  claimNames:
+    kind: ServiceAccount
+    plural: serviceaccounts
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                displayName:
+                  description: the Display name for the service account.
+                  type: string
+                project:
+                  description: The ID of the project that the service account will be created in.
+                  type: string
+              required:
+                - displayName
+                - parent

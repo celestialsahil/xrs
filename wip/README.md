@@ -21,6 +21,14 @@ metadata:
 spec:
   package: xpkg.upbound.io/upbound/provider-gcp-compute:v1
 ```
+```
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-gcp-cloudplatform
+spec:
+  package: xpkg.upbound.io/upbound/provider-gcp-cloudplatform:v1
+```
 
 #### providerconfig: Authentication to GCP enviornment using service account json key as kubernetes secret/ impersonating service account
 ##### Imporsenation

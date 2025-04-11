@@ -1,0 +1,26 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: gcp-sa-composition
+  labels:
+    provider: provider-gcp
+spec:
+  compositeTypeRef:
+    apiVersion: bhasha.org/v1alpha1
+    kind: XServiceAccount
+  resources:
+    - name: gcp-sa
+      base:
+        apiVersion: cloudplatform.gcp.upbound.io/v1beta1
+        kind: ServiceAccount
+        spec:
+          forProvider:
+            displayName: ""
+            project: ""
+          providerConfigRef:
+            name: default-gcp
+        patches:
+          - fromFieldPath: spec.displayName
+            toFieldPath: spec.forProvider.displayName
+          - fromFieldPath: spec.project
+            toFieldPath: spec.forProvider.project
