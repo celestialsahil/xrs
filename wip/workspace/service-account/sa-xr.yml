@@ -1,4 +1,4 @@
-apiVersion: bhasha.org/v1apha1
+apiVersion: bhasha.org/v1alpha1
 kind: ServiceAccount
 metadata:
   name: sa-lz-crossplane
