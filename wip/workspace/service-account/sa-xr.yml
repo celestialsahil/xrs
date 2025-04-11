@@ -1,4 +1,4 @@
-api: bhasha.org/v1apha1
+apiVersion: bhasha.org/v1apha1
 kind: ServiceAccount
 metadata:
   name: sa-lz
