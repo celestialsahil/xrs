@@ -5,5 +5,5 @@ metadata:
 spec:
   compositionRef:
     name: gcp-sa-composition
-  displayName: sa-cross-plane-poc-01
+  displayName: sa-cross-plane-poc
   project: sahil-01-00-002

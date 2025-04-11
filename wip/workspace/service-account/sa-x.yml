@@ -12,7 +12,7 @@ spec:
     - name: gcp-sa
       base:
         apiVersion: cloudplatform.gcp.upbound.io/v1beta1
-        kind: ServiceAccount
+        kind: XServiceAccount
         spec:
           forProvider:
             displayName: ""
