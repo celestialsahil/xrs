@@ -1,7 +1,7 @@
 apiVersion: bhasha.org/v1apha1
 kind: ServiceAccount
 metadata:
-  name: sa-lz
+  name: sa-lz-crossplane
 spec:
   compositionRef:
     name: gcp-sa-composition

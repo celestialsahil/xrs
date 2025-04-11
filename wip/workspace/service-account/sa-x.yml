@@ -19,8 +19,8 @@ spec:
             project: ""
           providerConfigRef:
             name: default-gcp
-        patches:
-          - fromFieldPath: spec.displayName
-            toFieldPath: spec.forProvider.displayName
-          - fromFieldPath: spec.project
-            toFieldPath: spec.forProvider.project
+      patches:
+        - fromFieldPath: spec.displayName
+          toFieldPath: spec.forProvider.displayName
+        - fromFieldPath: spec.project
+          toFieldPath: spec.forProvider.project
