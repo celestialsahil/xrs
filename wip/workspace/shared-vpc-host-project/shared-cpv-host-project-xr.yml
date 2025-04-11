@@ -1,4 +1,4 @@
-apiVersion: xsharedvpchostprojects.bhasha.org/v1alpha1
+apiVersion: bhasha.org/v1alpha1
 kind: SharedVPCHostProject
 metadata:
   name: my-shared-vpc-host-project
