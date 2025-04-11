@@ -13,7 +13,9 @@ spec:
         kind: SharedVPCHostProject
         spec:
           forProvider:
-            project: ""  # Provide default values for service project ID
+            project: ""  # Provide default values for host project ID
+          providerConfigRef:
+            name: default-gcp
       patches:
         - type: FromCompositeFieldPath
           fromFieldPath: spec.project
