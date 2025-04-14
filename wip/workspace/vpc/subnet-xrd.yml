@@ -60,6 +60,8 @@ spec:
                     name: 
                       description: nmae of the referenced object.
                       type: string
+                  required:
+                    - name
                 privateIpGoogleAccess:
                   type: boolean
                   default: false
