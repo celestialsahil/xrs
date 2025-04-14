@@ -15,8 +15,8 @@ spec:
         kind: Subnetwork
         spec:
           forProvider:
-            ipCidrRange: 10.0.0.0/24 # provide default values
-            region: asia-south1 # provide default values
+            ipCidrRange: "" # provide default values
+            region: "" # provide default values
             network: ""  # must be empty, the patch will populate it
             privateIpGoogleAccess: ""
             project: ""

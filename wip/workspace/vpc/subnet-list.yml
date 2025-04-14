@@ -9,6 +9,7 @@ items:
     name: my-subnet-1
   spec:
     name: my-subnet-1
+    project: sahil-01-a-02
     ipCidrRange: 10.0.0.0/24
     region: asia-south1
     networkRef: my-crossplane-vpc-01
@@ -27,6 +28,7 @@ items:
     name: my-subnet-2
   spec:
     name: my-subnet-2
+    project: sahil-01-a-02
     ipCidrRange: 10.0.5.0/24
     region: asia-south1
     networkRef: my-crossplane-vpc-01
@@ -38,6 +40,7 @@ items:
     name: my-subnet-3
   spec:
     name: my-subnet-3
+    subnet: sahil-01-a-02
     ipCidrRange: 10.0.6.0/24
     region: asia-south1
     networkRef: my-crossplane-vpc-02
@@ -49,6 +52,7 @@ items:
     name: my-subnet-4
   spec:
     name: my-subnet-4
+    project: sahil-01-a-02
     ipCidrRange: 10.0.7.0/24
     region: asia-south1
     networkRef: my-crossplane-vpc-02
