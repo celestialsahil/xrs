@@ -21,7 +21,7 @@ spec:
             spec:
               type: object
               properties:
-                namae:
+                name:
                   type: string
                   description: "Name of the VPC"  # Keeping description as property.
                 project:
