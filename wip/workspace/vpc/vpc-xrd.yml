@@ -23,7 +23,7 @@ spec:
               properties:
                 name:
                   type: string
-                  description: "Name of the VPC"  # Keeping description as property.
+                  description: "Name of the VPC"
                 project:
                   description:
                     The ID of the project in which the resource belongs.
@@ -48,6 +48,4 @@ spec:
                   default: "GLOBAL"
                   enum: ["REGIONAL", "GLOBAL"]
               required:
-                - name
                 - project
-                - description
