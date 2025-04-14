@@ -1,15 +1,15 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: xvpcs.network.bhasha.org
+  name: xnetwork.bhasha.org
 spec:
-  group: network.bhasha.org
+  group: bhasha.org
   names:
-    kind: XVPC
-    plural: xvpcs
+    kind: XNetwork
+    plural: xnetwork
   claimNames:
-    kind: VPC
-    plural: vpcs
+    kind: Network
+    plural: networks
   versions:
     - name: v1alpha1
       served: true
@@ -24,15 +24,30 @@ spec:
                 name:
                   type: string
                   description: "Name of the VPC"  # Keeping description as property.
+                project:
+                  description: |-
+                    The ID of the project in which the resource belongs.
+                    If it is not provided, the provider project is used.
+                  type: string
                 description:
                   type: string
                   description: "A description of the VPC"
                 autoCreateSubnetworks:
                   type: boolean
                   default: false
+                deleteDefaultRoutesOnCreate:
+                  description: |-
+                      If set to true, default routes (0.0.0.0/0) will be deleted
+                      immediately after network creation. Defaults to false.
+                  type: boolean
+                mtu:
+                  description: |-
+                    Maximum Transmission Unit in bytes. The default value is 1460 bytes.
+                  type: number
                 routingMode:
                   type: string
                   default: "GLOBAL"
                   enum: ["REGIONAL", "GLOBAL"]
               required:
                 - name
+                - project

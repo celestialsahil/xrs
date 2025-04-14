@@ -6,8 +6,8 @@ metadata:
     provider: provider-gcp
 spec:
   compositeTypeRef:
-    apiVersion: network.bhasha.org/v1alpha1
-    kind: XVPC
+    apiVersion: bhasha.org/v1alpha1
+    kind: XNetwork
   resources:
     - name: network
       base:
@@ -19,7 +19,9 @@ spec:
           forProvider:
             description: "Default VPC description" # Set a default
             autoCreateSubnetworks: false # Provide default values for service project ID
+            deleteDefaultRoutesOnCreate: false
             routingMode: GLOBAL
+            mtu: 1460
           providerConfigRef:
             name: default-gcp
       patches:

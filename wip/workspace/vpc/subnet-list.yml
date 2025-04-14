@@ -1,0 +1,55 @@
+apiVersion: v1
+kind: List
+metadata:
+  name: SubnetworkList
+items:
+- apiVersion: bhasha.org/v1alpha1
+  kind: XSubnet
+  metadata:
+    name: my-subnet-1
+  spec:
+    name: my-subnet-1
+    ipCidrRange: 10.0.0.0/24
+    region: asia-south1
+    networkRef: my-crossplane-vpc-01
+    privateIpGoogleAccess: true
+    secondaryIpRange:
+      - ipCidrRange: 10.0.2.0/24
+        rangeName: range-2
+      - ipCidrRange: 10.0.3.0/24
+        rangeName: range-3
+      - ipCidrRange: 10.0.4.0/24
+        rangeName: range-4
+
+- apiVersion: bhasha.org/v1alpha1
+  kind: XSubnet
+  metadata:
+    name: my-subnet-2
+  spec:
+    name: my-subnet-2
+    ipCidrRange: 10.0.5.0/24
+    region: asia-south1
+    networkRef: my-crossplane-vpc-01
+    privateIpGoogleAccess: true
+
+- apiVersion: bhasha.org/v1alpha1
+  kind: XSubnet
+  metadata:
+    name: my-subnet-3
+  spec:
+    name: my-subnet-3
+    ipCidrRange: 10.0.6.0/24
+    region: asia-south1
+    networkRef: my-crossplane-vpc-02
+    privateIpGoogleAccess: true
+
+- apiVersion: bhasha.org/v1alpha1
+  kind: XSubnet
+  metadata:
+    name: my-subnet-4
+  spec:
+    name: my-subnet-4
+    ipCidrRange: 10.0.7.0/24
+    region: asia-south1
+    networkRef: my-crossplane-vpc-02
+    privateIpGoogleAccess: true
