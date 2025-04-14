@@ -19,6 +19,7 @@ spec:
             region: asia-south1 # provide default values
             network: ""  # must be empty, the patch will populate it
             privateIpGoogleAccess: ""
+            project: ""
             secondaryIpRange:
               - ipCidrRange: ""
                 rangeName: ""

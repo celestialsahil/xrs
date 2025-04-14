@@ -74,6 +74,7 @@ spec:
                         description: Name of the Secondary Subnet. Required.
               required:
                 - name
+                - project
                 - ipCidrRange
                 - region
                 - networkRef
