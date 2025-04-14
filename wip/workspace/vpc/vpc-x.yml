@@ -18,8 +18,8 @@ spec:
         spec:
           forProvider:
             project: ""
-            description: "Default VPC description" # Set a default
-            autoCreateSubnetworks: false # Provide default values for service project ID
+            description: "Default VPC description"
+            autoCreateSubnetworks: false
             deleteDefaultRoutesOnCreate: false
             routingMode: GLOBAL
             mtu: 1460

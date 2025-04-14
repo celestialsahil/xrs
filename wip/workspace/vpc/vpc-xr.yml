@@ -10,3 +10,4 @@ spec:
   description: "First VPC created using XRD"
   autoCreateSubnetworks: false
   deleteDefaultRoutesOnCreate: true
+  mtu: 1460

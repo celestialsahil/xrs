@@ -9,12 +9,12 @@ items:
     name: my-vpc-01
   spec:
     compositionRef:
-    name: vpc-gcp
-  name: my-crossplane-vpc-01
-  project: project-a-id-02
-  description: "List 1 vpc created using XRD"
-  autoCreateSubnetworks: false
-  deleteDefaultRoutesOnCreate: true
+      name: vpc-gcp
+    name: my-crossplane-vpc-01
+    project: project-a-id-02
+    description: "List 1 vpc created using XRD"
+    autoCreateSubnetworks: false
+    deleteDefaultRoutesOnCreate: true
 
 - apiVersion: bhasha.org/v1alpha1
   kind: Network
@@ -22,9 +22,9 @@ items:
     name: my-vpc-02
   spec:
     compositionRef:
-    name: vpc-gcp
-  name: my-crossplane-vpc-02
-  project: project-a-id-02
-  description: "List 2 vpc created using XRD"
-  autoCreateSubnetworks: false
-  deleteDefaultRoutesOnCreate: false
+      name: vpc-gcp
+    name: my-crossplane-vpc-02
+    project: project-a-id-02
+    description: "List 2 vpc created using XRD"
+    autoCreateSubnetworks: false
+    deleteDefaultRoutesOnCreate: false
