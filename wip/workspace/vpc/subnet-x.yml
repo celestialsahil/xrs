@@ -20,6 +20,8 @@ spec:
             network: ""  # must be empty, the patch will populate it
             privateIpGoogleAccess: ""
             project: ""
+            purpose: ""
+            role: ""
             secondaryIpRange:
               - ipCidrRange: ""
                 rangeName: ""
@@ -28,6 +30,8 @@ spec:
       patches:
         - fromFieldPath: spec.name
           toFieldPath: metadata.name
+        - fromFieldPath: spec.project
+          toFieldPath: spec.forProvider.project
         - fromFieldPath: spec.ipCidrRange
           toFieldPath: spec.forProvider.ipCidrRange
         - fromFieldPath: spec.region
