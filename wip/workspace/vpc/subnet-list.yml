@@ -47,7 +47,6 @@ items:
       name: subnet-composition
     name: my-subnet-3
     project: sahil-01-a-02
-    subnet: sahil-01-a-02
     ipCidrRange: 10.0.6.0/24
     region: asia-south1
     networkRef: my-crossplane-vpc-02
