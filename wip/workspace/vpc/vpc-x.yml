@@ -17,6 +17,8 @@ spec:
           name: my-crossplane-vpc
         spec:
           forProvider:
+            project: ""
+            name: ""
             description: "Default VPC description" # Set a default
             autoCreateSubnetworks: false # Provide default values for service project ID
             deleteDefaultRoutesOnCreate: false
@@ -31,3 +33,11 @@ spec:
           toFieldPath: spec.forProvider.description
         - fromFieldPath: spec.autoCreateSubnetworks
           toFieldPath: spec.forProvider.autoCreateSubnetworks
+        - fromFieldPath: spec.project
+          toFieldPath: spec.forProvider.project
+        - fromFieldPath: spec.deleteDefaultRoutesOnCreate
+          toFieldPath: spec.forProvider.deleteDefaultRoutesOnCreate
+        - fromFieldPath: spec.routingMode
+          toFieldPath: spec.forProvider.routingMode
+        - fromFieldPath: spec.mtu
+          toFieldPath: spec.forProvider.mtu

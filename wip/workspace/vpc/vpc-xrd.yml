@@ -21,13 +21,12 @@ spec:
             spec:
               type: object
               properties:
-                name:
+                namae:
                   type: string
                   description: "Name of the VPC"  # Keeping description as property.
                 project:
-                  description: |-
+                  description:
                     The ID of the project in which the resource belongs.
-                    If it is not provided, the provider project is used.
                   type: string
                 description:
                   type: string
@@ -36,12 +35,12 @@ spec:
                   type: boolean
                   default: false
                 deleteDefaultRoutesOnCreate:
-                  description: |-
+                  description:
                       If set to true, default routes (0.0.0.0/0) will be deleted
                       immediately after network creation. Defaults to false.
                   type: boolean
                 mtu:
-                  description: |-
+                  description:
                     Maximum Transmission Unit in bytes. The default value is 1460 bytes.
                   type: number
                 routingMode:
@@ -51,3 +50,4 @@ spec:
               required:
                 - name
                 - project
+                - description
