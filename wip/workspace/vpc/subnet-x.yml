@@ -36,8 +36,8 @@ spec:
           toFieldPath: spec.forProvider.ipCidrRange
         - fromFieldPath: spec.region
           toFieldPath: spec.forProvider.region
-        - fromFieldPath: spec.networkRef
-          toFieldPath: spec.forProvider.network
+        - fromFieldPath: spec.networkRef.name
+          toFieldPath: spec.forProvider.networkRef.name
         - fromFieldPath: spec.privateIpGoogleAccess
           toFieldPath: spec.forProvider.privateIpGoogleAccess
         - fromFieldPath: spec.secondaryIpRange

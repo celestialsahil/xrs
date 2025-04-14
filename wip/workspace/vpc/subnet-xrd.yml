@@ -54,8 +54,12 @@ spec:
                       Possible values are: ACTIVE, BACKUP.
                     type: string
                 networkRef:
-                  type: string
+                  type: object
                   description: Reference to the Network to associate the subnet with
+                  properties:
+                    name: 
+                      description: nmae of the referenced object.
+                      type: string
                 privateIpGoogleAccess:
                   type: boolean
                   default: false

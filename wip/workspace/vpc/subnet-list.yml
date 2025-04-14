@@ -14,7 +14,8 @@ items:
     project: sahil-01-a-02
     ipCidrRange: 10.0.0.0/24
     region: asia-south1
-    networkRef: my-crossplane-vpc-01
+    networkRef: 
+      name: my-crossplane-vpc-01
     privateIpGoogleAccess: true
     secondaryIpRange:
       - ipCidrRange: 10.0.2.0/24
@@ -35,7 +36,8 @@ items:
     project: sahil-01-a-02
     ipCidrRange: 10.0.5.0/24
     region: asia-south1
-    networkRef: my-crossplane-vpc-01
+    networkRef: 
+      name: my-crossplane-vpc-01
     privateIpGoogleAccess: true
 
 - apiVersion: bhasha.org/v1alpha1
@@ -49,7 +51,8 @@ items:
     project: sahil-01-a-02
     ipCidrRange: 10.0.6.0/24
     region: asia-south1
-    networkRef: my-crossplane-vpc-02
+    networkRef: 
+      name: my-crossplane-vpc-02
     privateIpGoogleAccess: true
 
 - apiVersion: bhasha.org/v1alpha1
@@ -63,5 +66,6 @@ items:
     project: sahil-01-a-02
     ipCidrRange: 10.0.7.0/24
     region: asia-south1
-    networkRef: my-crossplane-vpc-02
+    networkRef: 
+      name: my-crossplane-vpc-02
     privateIpGoogleAccess: true
