@@ -11,7 +11,7 @@ items:
     compositionRef:
       name: vpc-gcp
     name: my-crossplane-vpc-01
-    project: project-a-id-02
+    project: sahil-01-a-02
     description: "List 1 vpc created using XRD"
     autoCreateSubnetworks: false
     deleteDefaultRoutesOnCreate: true
@@ -24,7 +24,7 @@ items:
     compositionRef:
       name: vpc-gcp
     name: my-crossplane-vpc-02
-    project: project-a-id-02
+    project: sahil-01-a-02
     description: "List 2 vpc created using XRD"
     autoCreateSubnetworks: false
     deleteDefaultRoutesOnCreate: false
