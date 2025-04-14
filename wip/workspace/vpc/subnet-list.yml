@@ -25,7 +25,7 @@ items:
         rangeName: range-4
 
 - apiVersion: bhasha.org/v1alpha1
-  kind: XSubnet
+  kind: XSubnetwork
   metadata:
     name: my-subnet-2
   spec:
@@ -39,7 +39,7 @@ items:
     privateIpGoogleAccess: true
 
 - apiVersion: bhasha.org/v1alpha1
-  kind: XSubnet
+  kind: XSubnetwork
   metadata:
     name: my-subnet-3
   spec:
@@ -53,7 +53,7 @@ items:
     privateIpGoogleAccess: true
 
 - apiVersion: bhasha.org/v1alpha1
-  kind: XSubnet
+  kind: XSubnetwork
   metadata:
     name: my-subnet-4
   spec:
