@@ -18,6 +18,9 @@ spec:
             spec:
               type: object
               properties:
+                name:
+                  type: string
+                  description: "Name of the subnet"
                 ipCidrRange:
                   type: string
                   description: IP CIDR range for the Subnet. Required.
