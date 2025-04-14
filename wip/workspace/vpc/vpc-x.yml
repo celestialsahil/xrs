@@ -18,7 +18,6 @@ spec:
         spec:
           forProvider:
             project: ""
-            name: ""
             description: "Default VPC description" # Set a default
             autoCreateSubnetworks: false # Provide default values for service project ID
             deleteDefaultRoutesOnCreate: false
