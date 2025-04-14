@@ -4,10 +4,12 @@ metadata:
   name: SubnetworkList
 items:
 - apiVersion: bhasha.org/v1alpha1
-  kind: XSubnet
+  kind: XSubnetwork
   metadata:
     name: my-subnet-1
   spec:
+    compositionRef:
+      name: subnet-composition
     name: my-subnet-1
     project: sahil-01-a-02
     ipCidrRange: 10.0.0.0/24
@@ -27,6 +29,8 @@ items:
   metadata:
     name: my-subnet-2
   spec:
+    compositionRef:
+      name: subnet-composition
     name: my-subnet-2
     project: sahil-01-a-02
     ipCidrRange: 10.0.5.0/24
@@ -39,6 +43,8 @@ items:
   metadata:
     name: my-subnet-3
   spec:
+    compositionRef:
+      name: subnet-composition
     name: my-subnet-3
     subnet: sahil-01-a-02
     ipCidrRange: 10.0.6.0/24
@@ -51,6 +57,8 @@ items:
   metadata:
     name: my-subnet-4
   spec:
+    compositionRef:
+      name: subnet-composition
     name: my-subnet-4
     project: sahil-01-a-02
     ipCidrRange: 10.0.7.0/24
