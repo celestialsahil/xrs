@@ -7,7 +7,7 @@ metadata:
 spec:
   compositeTypeRef:
     apiVersion: bhasha.org/v1alpha1
-    kind: XSubnet
+    kind: XSubnetwork
   resources:
     - name: gcp-subnet
       base:
@@ -15,9 +15,9 @@ spec:
         kind: Subnetwork
         spec:
           forProvider:
-            ipCidrRange: "" # provide default values
-            region: "" # provide default values
-            network: ""  # must be empty, the patch will populate it
+            ipCidrRange: ""
+            region: ""
+            networkRef: "" 
             privateIpGoogleAccess: ""
             project: ""
             purpose: ""

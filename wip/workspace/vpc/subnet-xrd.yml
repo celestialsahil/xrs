@@ -5,8 +5,11 @@ metadata:
 spec:
   group: bhasha.org
   names:
-    kind: XSubnet
-    plural: xsubnets
+    kind: XSubnetwork
+    plural: xsubnetwork
+  claimNames:
+    kind: Subnetwork
+    plural: subnetworks
   versions:
     - name: v1alpha1
       served: true
